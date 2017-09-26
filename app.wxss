@@ -1,0 +1,33 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clearfix::after{
+  content: '';
+  display: table;
+  clear: both;
+  height: 0;
+}
+.bg-red{
+  background: #f00;
+}
+.bg-white{
+  background: #fff;
+}
+.full{
+  width: 100%;
+}
+.navigator-hover {
+    background:#e8e8e8 !important;
+}
