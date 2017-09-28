@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}">
+      {{item}}
+      <view class="{{tabClass[index]}}"></view>
+    </view>
+  </view>
+  <view class="no-order" hidden="{{orderList ? true : false}}">
+    <image src="/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无订单</view>
+  </view>
+  <view class="order-list" hidden="{{orderList ? false : true}}">
+    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+      <image class="photo" src="{{item.pic}}"></image>
+      <view class="order-date">
+        <view class="date-box">下单时间：{{item.dateAdd}}</view>
+        <view class="status {{(item.status==-1 || item.status==4) ? '':'red'}}">{{item.statusStr}}</view>
+      </view>
+      <view class="goods-info" >
+        <view class="goods-des">
+          <view>订单号:{{item.orderNumber}} </view>
+          <view>客户： {{item.customer}}
+            <div bindtap='contact' data-tel="{{item.tel}}">(联系
+              <image src='/images/i-mobile.png' style='height:16px;width:16px;'></image>买家)</div>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+</view>

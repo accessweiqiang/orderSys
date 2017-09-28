@@ -1,0 +1,56 @@
+<!--home.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+  <view class='store'>
+    <image id="bg" src='/images/background.png'></image>
+    <view id="store-info">
+      <image class="photo" src='/images/shangjia.png'></image>
+      <view class='info'>
+        <view class='name'>{{storeInfo.name}}</view>
+        <view class='introduce'>{{storeInfo.introduce}}</view>
+        <view class='expire'>
+          <view>{{storeInfo.expire}}天</view>
+          <view style='font-size:22rpx;'>剩余时间</view>
+        </view>
+      </view>
+      <image class="qr" src='/images/qr.png'></image>
+    </view>
+  </view>
+  <view class='today-statistics full clearfix'>
+    <navigator class='item left' hover-class="navigator-hover" url='/pages/today-order/index'>
+      <view>{{todayInfo.order}}</view>
+      <view class='label'>今日订单</view>
+    </navigator>
+    <navigator class='item right ' hover-class="navigator-hover" url='/pages/turnover/index'>
+      <view>{{todayInfo.turnover}}元</view>
+      <view class='label'>今日营业额</view>
+    </navigator>
+  </view>
+  <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
+  <view class='manage-tab  full'>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+      <image src='../../images/icon/latest-order.png'></image>
+      <view>最新订单</view>
+    </navigator>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+      <image src='../../images/icon/commodity.png'></image>
+      <view>商品管理</view>
+    </navigator>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+      <image src='../../images/icon/financial.png'></image>
+      <view>财务信息</view>
+    </navigator>
+  </view>
+  <view id='show-image-wrap'>
+    <image src='/images/shangjia.png'></image>
+  </view>
+  <view class='notice'>
+    <view class="notice_iteml">
+      <image src='/images/icon/caIl.png'></image>
+    </view>
+    <view class='notice_swiper'>
+    客官接单了...
+    </view>
+    
+  </view>
+</view>
