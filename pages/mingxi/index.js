@@ -34,13 +34,13 @@ Page({
 
     this.setData({
       orderList: [
-        { "dateAdd": "2018-9-9", "statusStr": "已完成", "status": -1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "https://img.meituan.net/msmerchant/b60ca34725098c2510d9942ae34675ae417400.jpg@750w_320h_1e_1c","tel":"18628977163" },
-        { "dateAdd": "2018-9-9", "statusStr": "已关闭", "status": 1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "http://p1.meituan.net/deal/e2f4eb1c2edd2fc2bc80783d4eeb42cc94206.jpg@180w_164h_1e_1c", "tel": "18628977163" }
+        { "dateAdd": "2018-9-9", "statusStr": "已完成", "status": -1, "orderNumber": "FF1245454", "customer": "红枣大米", "pic": "https://img.meituan.net/msmerchant/b60ca34725098c2510d9942ae34675ae417400.jpg@750w_320h_1e_1c", "tel": "18628977163" },
+        { "dateAdd": "2018-9-9", "statusStr": "已关闭", "status": 1, "orderNumber": "FF1245454", "customer": "番茄炒蛋", "pic": "http://p1.meituan.net/deal/e2f4eb1c2edd2fc2bc80783d4eeb42cc94206.jpg@180w_164h_1e_1c", "tel": "18628977163" }
       ]
     });
 
   },
-  contact:function(e){
+  contact: function (e) {
     wx.makePhoneCall({
       phoneNumber: e.target.dataset.tel //仅为示例，并非真实的电话号码
     })

@@ -2,9 +2,10 @@ var wxpay = require('../../utils/pay.js')
 var app = getApp()
 Page({
   data: {
-    statusType: ["待付款", "待发货", "待收货", "待评价", "已完成"],
+    statusType: ["已完成", "已关闭"],
     currentType: 0,
-    tabClass: ["", "", "", "", ""]
+    tabClass: ["", "",],
+    orderList: null
   },
   statusTap: function (e) {
     var curType = e.currentTarget.dataset.index;
@@ -20,37 +21,6 @@ Page({
       url: "/pages/order-details/index?id=" + orderId
     })
   },
-  cancelOrderTap: function (e) {
-    var that = this;
-    var orderId = e.currentTarget.dataset.id;
-    wx.showModal({
-      title: '确定要取消该订单吗？',
-      content: '',
-      success: function (res) {
-        if (res.confirm) {
-          wx.showLoading();
-          wx.request({
-            url: 'https://api.it120.cc/' + app.globalData.subDomain + '/order/close',
-            data: {
-              token: app.globalData.token,
-              orderId: orderId
-            },
-            success: (res) => {
-              wx.hideLoading();
-              if (res.data.code == 0) {
-                that.onShow();
-              }
-            }
-          })
-        }
-      }
-    })
-  },
-  toPayTap: function (e) {
-    var orderId = e.currentTarget.dataset.id;
-    var money = e.currentTarget.dataset.money;
-    wxpay.wxpay(app, money, orderId, "/pages/order-list/index");
-  },
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
 
@@ -59,78 +29,21 @@ Page({
     // 生命周期函数--监听页面初次渲染完成
 
   },
-  getOrderStatistics: function () {
-    var that = this;
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/order/statistics',
-      data: { token: app.globalData.token },
-      success: (res) => {
-        wx.hideLoading();
-        if (res.data.code == 0) {
-          var tabClass = that.data.tabClass;
-          if (res.data.data.count_id_no_pay > 0) {
-            tabClass[0] = "red-dot"
-          } else {
-            tabClass[0] = ""
-          }
-          if (res.data.data.count_id_no_transfer > 0) {
-            tabClass[1] = "red-dot"
-          } else {
-            tabClass[1] = ""
-          }
-          if (res.data.data.count_id_no_confirm > 0) {
-            tabClass[2] = "red-dot"
-          } else {
-            tabClass[2] = ""
-          }
-          if (res.data.data.count_id_no_reputation > 0) {
-            tabClass[3] = "red-dot"
-          } else {
-            tabClass[3] = ""
-          }
-          if (res.data.data.count_id_success > 0) {
-            //tabClass[4] = "red-dot"
-          } else {
-            //tabClass[4] = ""
-          }
-
-          that.setData({
-            tabClass: tabClass,
-          });
-        }
-      }
-    })
-  },
   onShow: function () {
     // 获取订单列表
-    wx.showLoading();
-    var that = this;
-    var postData = {
-      token: app.globalData.token
-    };
-    postData.status = that.data.currentType;
-    this.getOrderStatistics();
-    wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/order/list',
-      data: postData,
-      success: (res) => {
-        wx.hideLoading();
-        if (res.data.code == 0) {
-          that.setData({
-            orderList: res.data.data.orderList,
-            logisticsMap: res.data.data.logisticsMap,
-            goodsMap: res.data.data.goodsMap
-          });
-        } else {
-          this.setData({
-            orderList: null,
-            logisticsMap: {},
-            goodsMap: {}
-          });
-        }
-      }
-    })
 
+    this.setData({
+      orderList: [
+        { "dateAdd": "2018-9-9", "statusStr": "已完成", "status": -1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "https://img.meituan.net/msmerchant/b60ca34725098c2510d9942ae34675ae417400.jpg@750w_320h_1e_1c", "tel": "18628977163" },
+        { "dateAdd": "2018-9-9", "statusStr": "已关闭", "status": 1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "http://p1.meituan.net/deal/e2f4eb1c2edd2fc2bc80783d4eeb42cc94206.jpg@180w_164h_1e_1c", "tel": "18628977163" }
+      ]
+    });
+
+  },
+  contact: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.target.dataset.tel //仅为示例，并非真实的电话号码
+    })
   },
   onHide: function () {
     // 生命周期函数--监听页面隐藏

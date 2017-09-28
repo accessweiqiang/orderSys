@@ -2,7 +2,6 @@
 <!--1px = 750/320 = 2.34rpx;-->
 <view class="container">
   <view class='store'>
-    <image id="bg" src='/images/background.png'></image>
     <view id="store-info">
       <image class="photo" src='/images/shangjia.png'></image>
       <view class='info'>
@@ -13,17 +12,17 @@
           <view style='font-size:22rpx;'>剩余时间</view>
         </view>
       </view>
-      <image class="qr" src='/images/qr.png'></image>
+      <image class="qr" src='https://www.wendin.cn/public/images/icon/qr.png'></image>
     </view>
   </view>
-  <view class='today-statistics full clearfix'>
-    <navigator class='item left' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <view>{{todayInfo.order}}</view>
-      <view class='label'>今日订单</view>
+  <view class='today-statistics full'>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+      <view class='label'>{{todayInfo.order}}</view>
+      <view>今日订单</view>
     </navigator>
-    <navigator class='item right ' hover-class="navigator-hover" url='/pages/turnover/index'>
-      <view>{{todayInfo.turnover}}元</view>
-      <view class='label'>今日营业额</view>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index'>
+      <view class='label'>{{todayInfo.turnover}}元</view>
+      <view >今日营业额</view>
     </navigator>
   </view>
   <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
@@ -47,10 +46,10 @@
   <view class='notice'>
     <view class="notice_iteml">
       <image src='/images/icon/caIl.png'></image>
+      <text id='n-o-num'>10</text>      
     </view>
     <view class='notice_swiper'>
     客官接单了...
     </view>
-    
   </view>
 </view>

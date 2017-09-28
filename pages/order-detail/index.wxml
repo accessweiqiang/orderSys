@@ -1,0 +1,33 @@
+<view class="container">
+      <view class="order-info">
+          <view class="row-box">
+              <view class="row-label">黄先生</view>
+              <view class="right-text">18628977163</view>
+          </view>
+          <view class="row-box">
+              <view class="row-label">烤鱼</view>
+              <view class="row-label">x  1</view>
+              <view class="right-text">¥ 100</view>
+          </view>
+           <view class="row-box">
+              <view class="row-label">其他</view>
+              <view class="row-label">x  1</view>
+              <view class="right-text">¥ 60</view>
+          </view>
+          <view class="row-box">
+              <view class="row-label">备注</view>
+              <view class="remark red">撒娇发送到到</view>
+          </view>
+          <view class="row-box">
+              <view class="row-label">合计</view>
+              <view class="row-label red">¥ 900</view>
+              <view class="right-text">
+                <text class='status'>已支付</text>
+              </view>
+          </view>
+      </view>
+      <view class='oprate'>
+        <view class='btn'>无效</view>
+        <view class='btn start-btn'>开始处理</view>
+      </view>
+</view>

@@ -3,12 +3,15 @@
 .container {
   background-color: #fff;
   min-height: 100%;
+  color: #353535;
 }
 
 .store {
   height: 200rpx;
   width: 100%;
   position: relative;
+  background: url(https://www.wendin.cn/public/images/page/background.png) no-repeat;
+  background-size: cover;
 }
 
 #bg, #store-info {
@@ -66,15 +69,19 @@
 .today-statistics {
   height: 140rpx;
   display: flex;
-  align-items: center;
   background: #fff;
+  justify-content: center;
+  align-items: center;
 }
 
 .today-statistics .item {
   width: 50%;
+  height: 140rpx;
   text-align: center;
-  display: inline-block;
   font-size: 30rpx;
+}
+.today-statistics .item .label{
+  margin-top: 40rpx;
 }
 
 .manage-tab {
@@ -91,6 +98,7 @@
   font-size: 28rpx;
   height: 220rpx;
 }
+
 
 .manage-tab image {
   height: 70rpx;
@@ -129,8 +137,19 @@
   line-height: 100rpx;
   color: #999;
   margin-left: 20rpx;
+  position: relative;
+  
 }
-
+#n-o-num{
+position: absolute;
+font-size: 18rpx;
+top: 0rpx;
+right: 0;
+height: 34rpx;
+line-height: 34rpx;
+width: 34rpx;
+color: #fff;
+}
 .notice_iteml image {
   height: 100rpx;
   width: 100rpx;

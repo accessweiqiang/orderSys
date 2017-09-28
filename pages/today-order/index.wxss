@@ -5,8 +5,8 @@
 
 .status-box {
   width: 100%;
-  height: 88rpx;
-  line-height: 88rpx;
+  height: 120rpx;
+  line-height: 60rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .status-box .status-label {
-  width: 150rpx;
+  width: 375rpx;
   height: 100%;
   text-align: center;
   font-size: 28rpx;
@@ -25,18 +25,9 @@
 
 .status-box .status-label.active {
   color: #e64340;
-  border-bottom: 6rpx solid #e64340;
 }
 
-.status-box .status-label .red-dot {
-  width: 16rpx;
-  height: 16rpx;
-  position: absolute;
-  left: 116rpx;
-  top: 23rpx;
-  background-color: #f43530;
-  border-radius: 50%;
-}
+
 
 .no-order {
   width: 100%;
@@ -64,126 +55,41 @@
 
 .order-list {
   width: 100%;
+  margin-top: 20rpx;
 }
 
 .order-list .a-order {
   width: 100%;
   background-color: #fff;
-  margin-top: 20rpx;
-  position: relative;
-  padding: 10rpx 0 0 190rpx;
+  margin-bottom: 2rpx;
+  display: flex;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  color: #333333;
 }
 
 .order-list .a-order .photo {
-  position: absolute;
-  width: 180rpx;
-  height: 180rpx;
-  top: 20rpx;
-  left: 10rpx;
-}
-
-.order-list .a-order .order-date {
-  padding: 0 30rpx;
-  height: 80rpx;
-  justify-content: space-between;
-  font-size: 26rpx;
-  color: #000;
-  align-items: center;
-  position: relative;
-}
-
-
-.date-box {
-  margin: 5rpx 0;
-}
-
-.order-list .a-order .order-date .red {
-  font-size: 26rpx;
-  color: #e64340;
-}
-
-.a-order  .goods-info, .goods-img-container {
-  width: 720rpx;
-  margin-left: 30rpx;
-  border-top: 1rpx solid #eee;
-  padding: 30rpx 0;
-  display: flex;
-  align-items: center;
-}
-
-.goods-info .img-box {
   width: 120rpx;
   height: 120rpx;
-  overflow: hidden;
-  margin-right: 30rpx;
-  background-color: #f7f7f7;
-}
-
-.goods-info .img-box .goods-img, .goods-img-container .img-box .goods-img {
-  width: 120rpx;
-  height: 120rpx;
-}
-
-.goods-info  .goods-des {
-  width: 540rpx;
-  height: 78rpx;
-  line-height: 39rpx;
-  font-size: 26rpx;
-  color: #000;
-  overflow: hidden;
-}
-
-.goods-img-container {
-  height: 180rpx;
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.goods-img-container .img-box {
-  width: 120rpx;
-  height: 120rpx;
-  overflow: hidden;
-  margin-right: 20rpx;
-  background-color: #f7f7f7;
-  display: inline-block;
-}
-
-.order-list .a-order .price-box {
-  position: relative;
-  width: 720rpx;
-  height: 100rpx;
-  margin-left: 30rpx;
-  box-sizing: border-box;
-  padding: 20rpx 30rpx 20rpx 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 26rpx;
-}
-
-.order-list .a-order .price-box .total-price {
-  font-size: 26rpx;
-  color: #e64340;
-}
-
-.a-order .price-box .btn {
-  width: 166rpx;
-  height: 60rpx;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 60rpx;
-  border-radius: 6rpx;
   margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.order-list .a-order .order-no{
+  margin: 10rpx 0;
+}
+.order-list .a-order .order-info{
+  width: 600rpx;
+}
+.order-list .a-order  .order-date{
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+}
+.order-list .a-order .order-status {
+  margin-right: 30rpx;
 }
 
-.a-order .price-box .cancel-btn {
-  border: 1rpx solid #ccc;
-  position: absolute;
-  right: 216rpx;
-  top: 20rpx;
-}
-
-.a-order .price-box .topay-btn {
-  border: 1px solid #e64340;
+.order-list  .red {
   color: #e64340;
 }
+

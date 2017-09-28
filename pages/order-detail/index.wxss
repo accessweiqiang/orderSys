@@ -1,0 +1,61 @@
+.container{
+    width: 100%;
+    background-color: #fff;
+}
+.order-info{
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 60rpx;
+    padding-bottom: 60rpx;
+    border-bottom:1px solid #e1e1e1; 
+}
+.order-info .row-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 24rpx 30rpx 12rpx 30rpx;
+    font-size: 28rpx;
+    color: #000;
+}
+.order-info .row-box .row-label{
+  width: 180rpx;
+}
+.remark{
+  width: 580rpx;
+  text-align: left;
+}
+.order-info .row-box .right-text{
+   text-align: right;
+  width: 200rpx;
+}
+.status{
+  color: #fff;
+  background: #fe0000;
+  width: 90rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  display: inline-block;
+  border-radius: 4rpx;
+  text-align: center;
+}
+.oprate{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.oprate .btn{
+  width: 190rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  background: #999999;
+  text-align: center;
+  color: #fff;
+}
+.oprate .start-btn{
+  background: #e32910;
+}

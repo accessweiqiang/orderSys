@@ -11,7 +11,7 @@
         <view class="order-date">
           <view>{{item.dateAdd}}</view>
         </view>
-        <view class="order-status">未处理</view>
+        <view class="order-status">+18</view>
       </view>
     </view>
 
