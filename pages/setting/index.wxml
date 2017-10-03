@@ -1,0 +1,85 @@
+<view class="container">
+  <view class='main'>
+    <view class='set-item'>
+      <view class='title'>
+        <label class="label">
+          <view class='icon icon1'></view>
+          <text class='bold'>基本信息</text>
+        </label>
+        <view class="arrow"></view>
+      </view>
+      <view class='children'>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon1'></view>
+            <text class='bold'>店铺环境</text>
+          </label>
+          <image class='photo' src='https://www.wendin.cn/public/images/page/shangjia.png'></image>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon2'></view>
+            <text class='bold'>店铺名称</text>
+          </label>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon3'></view>
+            <text class='bold'>主营类别</text>
+          </label>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon4'></view>
+            <text class='bold'>店铺地址</text>
+          </label>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon5'></view>
+            <text class='bold'>联系电话</text>
+          </label>
+        </view>
+      </view>
+    </view>
+    <view class='set-item'>
+      <view class='title'>
+        <label class="label">
+          <view class='icon icon9'></view>
+          <text class='bold'>认证信息</text>
+        </label>
+        <view class="arrow"></view>
+      </view>
+      <view class='children'>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon1'></view>
+            <text class='bold'>实体认证</text>
+          </label>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon2'></view>
+            <text class='bold'>特殊行业认证</text>
+          </label>
+          <image class='photo' src='https://www.wendin.cn/public/images/page/shangjia.png'></image>
+        </view>
+        <view class='title'>
+          <label class="label">
+            <view class='icon icon3'></view>
+            <text class='bold'>营业执照</text>
+          </label>
+          <image class='photo' src='https://www.wendin.cn/public/images/page/shangjia.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='set-item'>
+      <view class='title'>
+        <label class="label">
+          <view class='icon icon9'></view>
+          <text class='bold'>打印机管理</text>
+        </label>
+      </view>
+    </view>
+  </view>
+</view>

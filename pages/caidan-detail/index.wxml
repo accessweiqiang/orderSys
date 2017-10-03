@@ -1,0 +1,12 @@
+<!--pages/caidan-detail/index.wxml-->
+<view class='container'>
+  <view class='photo' style='background-image:url(https://www.wendin.cn/public/images/page/banner.png)'></view>
+  <view class='info'>
+    <text class='name'>{{name}}</text>
+    <text class='price red'> <text class='yen'>¥</text>{{price}}</text>
+  </view>
+  <view class='spec'>规格：{{spec}}</view>
+  <view class='line-gray'></view>
+  <view class='title'>店家说：</view>
+  <view class='remark'>{{remark}}</view>
+</view>

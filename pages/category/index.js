@@ -1,35 +1,22 @@
-// pages/turnover/index.js
+// pages/category/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    total:5000,
-    list:[
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money:200,
-        date:"2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      }
-    ]
+    items:[
+      {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+    ],
+    currentIndex:null
   },
-
+  select:function(e){
+    var index = e.currentTarget.dataset.index;
+    this.setData({
+      currentIndex:index
+    });
+  
+  },
   /**
    * 生命周期函数--监听页面加载
    */

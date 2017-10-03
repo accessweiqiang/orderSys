@@ -1,0 +1,63 @@
+.main{
+  padding:40rpx 30rpx;
+}
+.set-item .children{
+  padding:0rpx 0 20rpx 60rpx;
+  
+}
+.arrow{
+  background: url(https://www.wendin.cn/public/images/icon/arrow.png) center center no-repeat;
+  height: 50rpx;
+  width: 50rpx;
+  background-size: 30rpx;
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 20rpx 0;
+}
+.set-item  .label{
+  display: flex;
+  justify-content: space-between;
+}
+.set-item  .label .icon{
+  height: 50rpx;
+  width: 50rpx;
+  background-size: 30rpx;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.children  .photo{
+  height: 50rpx;
+  width: 50rpx;
+}
+.icon1{
+  background-image: url(https://www.wendin.cn/public/images/icon/Basic-data@2x.png);
+}
+.icon2{
+  background-image: url(https://www.wendin.cn/public/images/icon/Shop-environment@2x.png);
+}
+.icon3{
+  background-image: url(https://www.wendin.cn/public/images/icon/main-category@2x.png);
+}
+.icon4{
+  background-image: url(https://www.wendin.cn/public/images/icon/store-address@2x.png);
+}
+.icon5{
+  background-image: url(https://www.wendin.cn/public/images/icon/cntact-number@2x.png);
+}
+.icon6{
+  background-image: url(https://www.wendin.cn/public/images/icon/physicai-store@2x.png);
+}
+.icon7{
+  background-image: url(https://www.wendin.cn/public/images/icon/speciai-industry@2x.png);
+}
+.icon8{
+  background-image: url(https://www.wendin.cn/public/images/icon/Business-Iicense@2x.png);
+}
+.icon9{
+  background-image: url(https://www.wendin.cn/public/images/icon/Authentication@2x.png);
+}

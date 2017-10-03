@@ -27,7 +27,7 @@
   </view>
   <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
   <view class='manage-tab  full'>
-    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/new-order/index'>
       <image src='../../images/icon/latest-order.png'></image>
       <view>最新订单</view>
     </navigator>

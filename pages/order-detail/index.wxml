@@ -7,27 +7,48 @@
           <view class="row-box">
               <view class="row-label">烤鱼</view>
               <view class="row-label">x  1</view>
-              <view class="right-text">¥ 100</view>
+              <view class="right-text red"><text class='yen'>¥</text> 100</view>
           </view>
            <view class="row-box">
               <view class="row-label">其他</view>
               <view class="row-label">x  1</view>
-              <view class="right-text">¥ 60</view>
+              <view class="right-text red"><text class='yen'>¥</text> 60</view>
           </view>
-          <view class="row-box">
-              <view class="row-label">备注</view>
-              <view class="remark red">撒娇发送到到</view>
-          </view>
+         
           <view class="row-box">
               <view class="row-label">合计</view>
-              <view class="row-label red">¥ 900</view>
+              <view class="row-label red">
+              <text class='yen'>¥</text>
+              900</view>
               <view class="right-text">
                 <text class='status'>已支付</text>
               </view>
           </view>
+          <view class="row-box" style='color:#666666;font-size:24rpx;'>
+              <text>订单号：5454545427</text>
+              <text>日期：5454545427</text>
+          </view>
+      </view>
+      <view class='remark'>
+        <view><text class='red'>备注：</text><text>阿什顿发垃圾毒素；阿萨德</text></view>
       </view>
       <view class='oprate'>
         <view class='btn'>无效</view>
-        <view class='btn start-btn'>开始处理</view>
+        <view class='btn start-btn' bindtap='showModal'>开始处理</view>
       </view>
+</view>
+<view class='modal' wx:if="{{modalVisible}}">
+  <view class='mask'></view>
+  <view class='modal-content'>
+    <form>
+      <view class='title'>选择打印</view>
+      <view class='print'>
+        <view class='item {{index==currentPrintItem?"active":""}}' wx:for="{{printItems}}" wx:key="index" bindtap='selectPrint' data-index='{{index}}'>{{item.text}}</view>
+      </view>
+      <view class='bottom-btn'>
+        <view class='cancel btn' bindtap='hideModal'>取消</view>
+        <view class='ok btn bg-red' bindtap='ok'>确定</view>
+      </view>
+    </form>
+  </view>
 </view>

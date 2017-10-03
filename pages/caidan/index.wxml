@@ -1,0 +1,26 @@
+<!--pages/caidan/index.wxml-->
+<view class='container'>
+  <view class='photo'></view>
+  <view wx:if="{{catagory.length>0}}">
+    <scroll-view class='left-block' scroll-y="true">
+      <view wx:for="{{catagory}}" wx:for-index="index" wx:for-item="item" wx:key="unique" data-index="{{index}}" class='item {{currentCatagory==index?"active":""}}' bindtap='selectCatagory'>
+        <text class=''>{{item.text}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view class='right-block' scroll-y="true">
+      <view class="list" hidden="{{list ? false : true}}"> 
+        <navigator open-type='navigate' url='/pages/caidan-detail/index' class="item" wx:for="{{list}}" wx:key="unique">
+          <image class="photo" src="{{item.pic}}"></image>
+          <view>
+            <view class="name">{{item.name}}</view>
+            <view class="red">
+              <text class='yen'>¥</text>{{item.price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='no-data' wx:if="{{catagory.length==0}}">您还没有菜品，可以到商品管理添加
+    <navigator class='go-add' open-type='navigate' url="/pages/today-order/index" >去添加</navigator>
+  </view>
+</view>

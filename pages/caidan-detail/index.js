@@ -1,33 +1,14 @@
-// pages/turnover/index.js
+// pages/caidan-detail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    total:5000,
-    list:[
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money:200,
-        date:"2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      }
-    ]
+    name:"回锅肉",
+    spec:"中",
+    price:50,
+    remark:"sad发送到发送到"
   },
 
   /**

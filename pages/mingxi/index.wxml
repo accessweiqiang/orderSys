@@ -4,7 +4,7 @@
     <view class="text">暂无订单</view>
   </view>
   <view class="order-list" hidden="{{orderList ? false : true}}">
-    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+    <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{index}}' class="a-order" wx:for="{{orderList}}" wx:key="{{unique}}" >
       <image class="photo" src="{{item.pic}}"></image>
       <view class='order-info'>
         <view class='custom'>{{item.customer}}</view>
@@ -13,8 +13,6 @@
         </view>
         <view class="order-status">+18</view>
       </view>
-    </view>
-
-
+    </navigator>
   </view>
 </view>

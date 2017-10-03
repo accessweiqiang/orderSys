@@ -1,33 +1,14 @@
-// pages/turnover/index.js
+// pages/caiwu/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    total:5000,
-    list:[
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money:200,
-        date:"2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      }
-    ]
+    withdraw:500000,
+    total:50000,
+    offlinePay:500,
+    onlinePay:6000,
   },
 
   /**

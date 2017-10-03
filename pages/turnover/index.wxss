@@ -1,1 +1,46 @@
 /* pages/turnover/index.wxss */
+.total{
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+  width: 100%;
+  background: url(https://www.wendin.cn/public/images/page/background.png) no-repeat;
+  background-size: cover;
+}
+.list{
+  padding: 30rpx;
+}
+.list .title{
+  margin: 20rpx 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.list .item{
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 20rpx;
+}
+.list .item .info{
+  display: flex;
+  justify-content: space-between;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.list .item .detail{
+  width: 70%;
+  height: 70rpx;
+  overflow: hidden;
+  color: #333;
+}
+.list .item .money{
+  width: 25%;
+  text-align: right;
+}
+
+.list .item .date{
+  color: #666666;
+  font-size: 24rpx;
+}

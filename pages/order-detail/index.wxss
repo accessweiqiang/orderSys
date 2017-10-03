@@ -1,36 +1,38 @@
-.container{
-    width: 100%;
-    background-color: #fff;
+.container {
+  width: 100%;
+  background-color: #fff;
+  font-size: 28rpx;
 }
-.order-info{
-    width: 100%;
-    background-color: #fff;
-    margin-bottom: 60rpx;
-    padding-bottom: 60rpx;
-    border-bottom:1px solid #e1e1e1; 
+
+.order-info {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  border-bottom: 1px solid #e1e1e1;
 }
-.order-info .row-box{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 24rpx 30rpx 12rpx 30rpx;
-    font-size: 28rpx;
-    color: #000;
+
+.order-info .row-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color: #000;
+  height: 90rpx;
+  line-height: 90rpx;
 }
-.order-info .row-box .row-label{
+
+.order-info .row-box .row-label {
   width: 180rpx;
 }
-.remark{
-  width: 580rpx;
-  text-align: left;
-}
-.order-info .row-box .right-text{
-   text-align: right;
+
+.order-info .row-box .right-text {
+  text-align: right;
   width: 200rpx;
 }
-.status{
+
+.status {
   color: #fff;
   background: #fe0000;
   width: 90rpx;
@@ -41,21 +43,63 @@
   border-radius: 4rpx;
   text-align: center;
 }
-.oprate{
-  display: flex;
-  justify-content: space-around;
+
+.remark {
   width: 100%;
+  padding: 24rpx 30rpx 12rpx 30rpx;
 }
-.oprate .btn{
-  width: 190rpx;
-  height: 64rpx;
-  line-height: 64rpx;
+
+.oprate {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.oprate .btn {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
   font-size: 28rpx;
-  border-radius: 6rpx;
-  background: #999999;
+  background: #999;
   text-align: center;
   color: #fff;
 }
-.oprate .start-btn{
+
+.oprate .start-btn {
+  background: #e32910;
+}
+
+.yen {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.print {
+  display: flex;
+  justify-content: space-around;
+}
+
+.print .item {
+  width: 160rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+  padding-left: 40rpx;
+}
+
+.print .item::before {
+  content: '';
+  height: 24rpx;
+  width: 24rpx;
+  border-radius: 100%;
+  position: absolute;
+  top: 33rpx;
+  left: 0;
+  background: #bbbbbb;
+}
+
+.print .item.active::before {
   background: #e32910;
 }
