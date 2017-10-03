@@ -51,7 +51,7 @@
         "text": "菜单"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/setting/index",
         "iconPath": "images/tab/setting-off.png",
         "selectedIconPath": "images/tab/setting-off.png",
         "text": "设置"
