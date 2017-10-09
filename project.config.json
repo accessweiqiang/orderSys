@@ -12,15 +12,8 @@
 	"projectname": "TEST",
 	"condition": {
 		"weapp": {
-			"current": 8,
-			"current": 2,
+			"current": 6,
 			"list": [
-				{
-					"id": 0,
-					"name": "index",
-					"pathName": "pages/address-add/index",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "今日订单",
@@ -58,9 +51,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "原页面",
-					"pathName": "pages/address-add/index",
+					"pathName": "pages/bankcard/index",
 					"query": ""
 				},
 				{
@@ -162,7 +155,8 @@
 				{
 					"id": -1,
 					"name": "商品管理-add",
-					"pathName": "pages/shangpin-add/index"
+					"pathName": "pages/shangpin-add/index",
+					"query": ""
 				}
 			]
 		},

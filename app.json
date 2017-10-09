@@ -20,7 +20,7 @@
     "pages/mingxi/index",
     "pages/category/index",
     "pages/shangpin/index",
-    "pages/shangpin-add/index"
+    "pages/shangpin-add/index",
     "pages/caidan/index",
     "pages/mingxi-detail/index",
     "pages/caidan-detail/index",
@@ -28,7 +28,8 @@
     "pages/setting/index",
     "pages/printer/index",
     "pages/setting-baseInfo/index",
-    "pages/printer-add/index"
+    "pages/printer-add/index",
+    "pages/bankcard/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,14 +51,12 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/home/home",
         "pagePath": "pages/caidan/index",
         "iconPath": "images/tab/menu-off.png",
         "selectedIconPath": "images/tab/menu-off.png",
         "text": "菜单"
       },
       {
-        "pagePath": "pages/home/home",
         "pagePath": "pages/setting/index",
         "iconPath": "images/tab/setting-off.png",
         "selectedIconPath": "images/tab/setting-off.png",

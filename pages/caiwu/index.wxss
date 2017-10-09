@@ -48,32 +48,48 @@
   width: 100%;
 }
 
-.total-value{
+.total-value {
   position: relative;
-  z-index: 3;  
+  z-index: 3;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px #dbdbdb solid;
-  padding: 40rpx 20rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+  padding: 40rpx 20rpx 40rpx 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 40rpx;
+  background-position: left center;
+  margin-left: 20rpx;  
 }
 
-.item image {
-  height: 44rpx;
-  width: 44rpx;
-  vertical-align: middle;
-  margin-right: 10rpx;
+.item.c1 {
+  background-image: url(https://www.wendin.cn/public/images/icon/withdraw-depost.png);
 }
-.btn-wrap{
+
+.item.c2 {
+  background-image: url(https://www.wendin.cn/public/images/icon/GRoss-income.png);
+}
+
+.item.c3 {
+  background-image: url(https://www.wendin.cn/public/images/icon/expenses-and-receipts.png);
+}
+
+.item.c4 {
+  background-image: url(https://www.wendin.cn/public/images/icon/credit-card.png);
+}
+
+.btn-wrap {
   display: flex;
   margin-top: 60rpx;
   justify-content: center;
 }
-.btn{
+
+.btn {
   height: 88rpx;
   line-height: 88rpx;
   color: #fff;

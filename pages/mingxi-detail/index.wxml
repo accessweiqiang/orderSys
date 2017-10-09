@@ -6,10 +6,9 @@
       105
     </view>
     <view class='date'>2017-08-09   19:16</view>
-    
   </view>
   <view class='t2'>菜单详情</view>
   <view class='detail'>
-    <text class='item' wx:for="{{list}}">{{item}}</text>
+    <text class='item' wx:for="{{list}}" wx:key="unique">{{item}}</text>
   </view>
 </view>

@@ -13,35 +13,32 @@
 
   </view>
   <view class='info'>
-    <view class='item'>
+    <view class='item c1'>
         <view class='label'>
-          <image src='http://localhost/public/images/icon/withdraw-depost.png'></image>
+          <view class='image c1'></view>
           <text>线上支付</text>
         </view>
         <view class='text red'>
           <text class='yen'>¥</text> {{onlinePay}}
         </view>
     </view>
-    <view class='item'>
+    <view class='item c2'>
         <view class='label'>
-          <image src='https://www.wendin.cn/public/images/icon/GRoss-income.png'></image>
           <text>现金支付</text>
         </view>
         <view class='text red'>
           <text class='yen'>¥</text> {{offlinePay}}
         </view>
     </view>
-    <view class='item'>
-        <view class='label'>
-          <image src='https://www.wendin.cn/public/images/icon/expenses-and-receipts.png'></image>
+    <view class='item c3'>
+        <navigator open-type='navigate' url='/pages/mingxi/index' class='label' style='width:100%'>
           <text>收支明细</text>
-        </view>
+        </navigator>
     </view>
-    <view class='item'>
-        <view class='label'>
-          <image src='https://www.wendin.cn/public/images/icon/credit-card.png'></image>
+    <view class='item c4'>
+        <navigator open-type='navigate' url='/pages/bankcard/index' class='label' style='width:100%'>
           <text>银行卡</text>
-        </view>
+        </navigator>
     </view>
   </view>
   <view class='btn-wrap'>

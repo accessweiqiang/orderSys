@@ -20,7 +20,11 @@
       </view>
     </view>
   </view>
-  <view class="no-data" hidden='{{list.length>0}}'>
+  <view class="no-data" wx:if='{{list.length==0}}'>
     暂无商品
   </view>
+  <navigator class='add-btn' open-type='navigate' url='/pages/shangpin-add/index'>
+  <image src='https://www.wendin.cn/public/images/icon/add.png'></image>
+  添加商品
+  </navigator>
 </view>

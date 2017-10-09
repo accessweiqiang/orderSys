@@ -1,6 +1,9 @@
 <view class="container">
-  <view class='banner'>
-    <image src='/images/page/banner-shangpin.png'></image>
+  <view class='banner' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'>
+    <view bindtap='uploadImage'>
+      <image src='https://www.wendin.cn/public/images/icon//UpIoad-pictures@2x.png'></image>
+      <view>点击上传照片</view>
+    </view>
   </view>
   <view class="info">
     <view class="row-box">
@@ -9,7 +12,7 @@
     </view>
     <view class="row-box">
       <view class="row-label">规格：</view>
-      <input type='text'placeholder='请输入规格' />
+      <input type='text' placeholder='请输入规格' />
     </view>
     <view class="row-box">
       <view class="row-label">价格：</view>
@@ -17,11 +20,11 @@
     </view>
     <view class="row-box">
       <view class="row-label">分类：</view>
-      <input type='text' placeholder='分类'/>
+      <input type='text' placeholder='分类' />
     </view>
-    <view class="row-box  intro-box" >
+    <view class="row-box  intro-box">
       <view class="row-label">介绍：</view>
-      <textarea auto-height placeholder='介绍' class='intro'  ></textarea>
+      <textarea auto-height placeholder='介绍' class='intro'></textarea>
     </view>
   </view>
   <view class='operate'>确定</view>

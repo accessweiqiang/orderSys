@@ -27,35 +27,25 @@
   </view>
   <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
   <view class='manage-tab  full'>
-<<<<<<< HEAD
-    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <image src='https://www.wendin.cn/public/images/icon/latest-order.png'></image>
-=======
     <navigator class='item' hover-class="navigator-hover" url='/pages/new-order/index'>
       <image src='../../images/icon/latest-order.png'></image>
->>>>>>> f1ae97b97bb33dd03c63a1ed439b74d7e1b8ead7
       <view>最新订单</view>
     </navigator>
-    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <image src='https://www.wendin.cn/public/images/icon/commodity.png'></image>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/shangpin/index'>
+      <image src='../../images/icon/commodity.png'></image>
       <view>商品管理</view>
     </navigator>
-<<<<<<< HEAD
-    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <image src='https://www.wendin.cn/public/images/icon/financial.png'></image>
-=======
     <navigator class='item' hover-class="navigator-hover" url='/pages/caiwu/index'>
       <image src='../../images/icon/financial.png'></image>
->>>>>>> f1ae97b97bb33dd03c63a1ed439b74d7e1b8ead7
       <view>财务信息</view>
     </navigator>
   </view>
   <view id='show-image-wrap'>
-    <image src='https://www.wendin.cn/public/images/page/shangjia.png'></image>
+    <image src='/images/shangjia.png'></image>
   </view>
   <view class='notice'>
     <view class="notice_iteml">
-      <image src='https://www.wendin.cn/public/images/icon/caIl.png'></image>
+      <image src='/images/icon/caIl.png'></image>
       <text id='n-o-num'>10</text>      
     </view>
     <view class='notice_swiper'>

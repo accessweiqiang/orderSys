@@ -1,9 +1,8 @@
 <view class="container">
-  <view class="no-order" hidden="{{orderList ? true : false}}">
-    <image src="/images/no-order.png" class="no-order-img"></image>
+  <view class="no-order" wx:if="{{orderList ?false  : true}}">
     <view class="text">暂无订单</view>
   </view>
-  <view class="order-list" hidden="{{orderList ? false : true}}">
+  <view class="order-list">
     <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{index}}' class="a-order" wx:for="{{orderList}}" wx:key="{{unique}}" >
       <image class="photo" src="{{item.pic}}"></image>
       <view class='order-info'>

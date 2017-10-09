@@ -39,6 +39,7 @@
 .list {
   width: 100%;
   margin-top: 20rpx;
+  margin-bottom: 80rpx;
 }
 .item-info{
  max-width:45%; 
@@ -97,6 +98,20 @@
   height: 24rpx;
 }
 
-.list  .red {
-  color: #e64340;
+.add-btn{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1px solid #e32910; 
+  background: #fff;
+}
+.add-btn image {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -4rpx;
 }

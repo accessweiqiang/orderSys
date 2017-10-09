@@ -29,6 +29,10 @@ Page({
     this.setData({
       list: [
         { "date": "2018-9-9","price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png"},
+        { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }, { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" },
+        { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }, { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" },
+        { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }, { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" },
+        { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }, { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" },
         { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }, { "date": "2018-9-9", "price": 10, "number": "FF1245454", "name": "回锅肉", "pic": "https://www.wendin.cn/public/images/page/shangjia.png" }
       ]
     });

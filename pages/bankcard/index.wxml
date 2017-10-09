@@ -1,0 +1,17 @@
+<view class="container">
+  <view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="unique">
+    <view class='image-warp'>
+      <image class='photo' src='{{item.photo}}'></image></view>
+      <view class='info'>
+        <view class='name'>{{item.name}}</view>
+        <view class='type'>{{item.type}}</view>
+        <view class='number'>{{item.number}}</view>
+      </view>
+      <view class='delete-btn red'>删除</view>
+    </view>
+  </view>
+  <navigator class='add-btn' open-type='navigate' url='/pages/shangpin-add/index'>
+    + 添加银行卡
+  </navigator>
+</view>
