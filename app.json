@@ -15,7 +15,12 @@
     "pages/notice/show",
     "pages/turnover/index",
     "pages/new-order/index",
-    "pages/today-order/index"
+    "pages/today-order/index",
+    "pages/order-detail/index",
+    "pages/mingxi/index",
+    "pages/category/index",
+    "pages/shangpin/index",
+    "pages/shangpin-add/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,20 +37,20 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "iconPath": "images/tab/home-page-on.png",
+        "selectedIconPath": "images/tab/home-page-on.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/nav/order-off.png",
-        "selectedIconPath": "images/nav/order-on.png",
+        "iconPath": "images/tab/menu-off.png",
+        "selectedIconPath": "images/tab/menu-off.png",
         "text": "菜单"
       },
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/nav/setting-off.png",
-        "selectedIconPath": "images/nav/setting-on.png",
+        "iconPath": "images/tab/setting-off.png",
+        "selectedIconPath": "images/tab/setting-off.png",
         "text": "设置"
       }
     ]

@@ -12,13 +12,60 @@
 	"projectname": "TEST",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
 					"name": "index",
 					"pathName": "pages/index/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "今日订单",
+					"pathName": "pages/today-order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "最新订单",
+					"pathName": "pages/new-order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收支明细",
+					"pathName": "pages/mingxi/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "订单列表",
+					"pathName": "pages/order-list/index",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "订单详情",
+					"pathName": "pages/order-detail/index",
+					"query": "id=2222"
+				},
+				{
+					"id": 6,
+					"name": "商品分类",
+					"pathName": "pages/category/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品管理",
+					"pathName": "pages/shangpin/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品管理-add",
+					"pathName": "pages/shangpin-add/index"
 				}
 			]
 		},

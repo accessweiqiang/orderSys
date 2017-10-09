@@ -1,14 +1,18 @@
 /**app.wxss**/
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
   box-sizing: border-box;
+  font-size: 28rpx;
 } 
 .left{
   float: left;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
 }
 .right{
   float: right;
@@ -20,7 +24,10 @@
   height: 0;
 }
 .bg-red{
-  background: #f00;
+  background: #e32910;
+}
+.red{
+  color: #e32910;
 }
 .bg-white{
   background: #fff;
@@ -28,6 +35,55 @@
 .full{
   width: 100%;
 }
+.line-gray{
+background: #e6e6e6;
+}
 .navigator-hover {
     background:#e8e8e8 !important;
+}
+.none{
+  display: none;
+}
+.modal .mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 100;
+  opacity: 0.6;
+}
+.modal .modal-content{
+  position: absolute;
+  width: 500rpx;
+  z-index: 101;
+  background: #fff;
+  left: 50%;
+  margin-left: -250rpx;
+  top: 200rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.modal .title{
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-weight: bold;
+}
+
+.modal  .bottom-btn {
+  display: flex;
+  justify-content: center;
+}
+.modal  .bottom-btn .btn{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.modal  .bottom-btn .ok{
+  color:#fff;
+  background:#e32910; 
 }
