@@ -15,7 +15,7 @@
   <view class='info'>
     <view class='item'>
         <view class='label'>
-          <image src='https://www.wendin.cn/public/images/icon/withdraw-depost.png'></image>
+          <image src='http://localhost/public/images/icon/withdraw-depost.png'></image>
           <text>线上支付</text>
         </view>
         <view class='text red'>

@@ -30,6 +30,17 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+.image-wrap .change-image-btn{
+  vertical-align: top;
+  display: inline-block;
+  color: #5bb7f5;
+  margin-right: 16rpx;
+  font-size: 24rpx;
+}
+.nav-btn{
+   color: #5bb7f5;
+  font-size: 24rpx;
+}
 .children  .photo{
   height: 50rpx;
   width: 50rpx;

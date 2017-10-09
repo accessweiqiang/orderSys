@@ -35,7 +35,7 @@
       <image src='../../images/icon/commodity.png'></image>
       <view>商品管理</view>
     </navigator>
-    <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/caiwu/index'>
       <image src='../../images/icon/financial.png'></image>
       <view>财务信息</view>
     </navigator>

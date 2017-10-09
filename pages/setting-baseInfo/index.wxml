@@ -1,0 +1,41 @@
+<view class="container">
+  <view class='photo' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
+  <text class='updatePhoto' bindtap='updatePhoto'>修改</text>
+  <view class='line-gray'></view>
+  <form bindsubmit="bindSave">
+    <view class="form-box">
+      <view class="row-wrap">
+        <view class="label">店名</view>
+        <view class="label-right">
+          <input name="shopName" class="input" type="text" placeholder="店名" value="{{shopName}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">店铺地址</view>
+        <view class="label-right">
+          <input name="address" class="input" type="text" placeholder="店铺地址" value="{{address}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">主营类目</view>
+        <view class="label-right">
+          <input name="leimu" class="input" type="text" placeholder="主营类目" value="{{leimu}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">联系电话</view>
+        <view class="label-right">
+          <input name="mobile" class="input" type="number" value="{{mobile}}" />
+        </view>
+      </view>
+      <view class="addr-details">
+        <view class="label">店铺介绍</view>
+        <view class="label-right">
+          <textarea name="introduce" auto-height placeholder="店铺介绍" value="{{introduce}}" />
+        </view>
+      </view>
+
+    </view>
+    <button type="warn" class="save-btn" formType="submit">保存</button>
+  </form>
+</view>

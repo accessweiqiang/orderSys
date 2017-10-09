@@ -43,7 +43,7 @@
   bottom: 0;
   height: 70rpx;
   line-height: 70rpx;
-  padding-left: 40rpx;
+  text-indent: 40rpx;
   z-index: 2;
   width: 100%;
 }

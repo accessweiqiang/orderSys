@@ -12,12 +12,12 @@
 	"projectname": "TEST",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 15,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "index",
-					"pathName": "pages/index/index",
+					"pathName": "pages/address-add/index",
 					"query": ""
 				},
 				{
@@ -96,6 +96,24 @@
 					"id": -1,
 					"name": "设置",
 					"pathName": "pages/setting/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打印机管理",
+					"pathName": "pages/printer/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置-基本信息",
+					"pathName": "pages/setting-baseInfo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打印机-add",
+					"pathName": "pages/printer-add/index",
 					"query": ""
 				}
 			]
