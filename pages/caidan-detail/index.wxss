@@ -1,0 +1,29 @@
+/* pages/caidan-detail/index.wxss */
+
+.photo{
+  height: 400rpx;
+  width: 100%;
+  background-size: cover;
+}
+.info{
+  display: flex;
+  padding: 30rpx; 
+  justify-content: space-between;
+}
+
+.name,.title{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.title,.spec{
+  padding-left: 30rpx;
+  
+}
+.line-gray
+{
+  margin: 40rpx 0;
+}
+.remark{
+  padding: 30rpx 10rpx 0 50rpx;
+  color: #666666;
+}

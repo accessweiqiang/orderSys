@@ -1,0 +1,45 @@
+<view class="container">
+  <form bindsubmit="bindSave">
+    <view class="form-box">
+      <view class="row-wrap">
+        <view class="label">名称</view>
+        <view class="label-right">
+          <input name="shopName" class="input" type="text" placeholder="打印机名称" value="{{shopName}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">型号</view>
+        <view class="label-right">
+          <input name="address" class="input" type="text" placeholder="型号" value="{{address}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">终端号</view>
+        <view class="label-right">
+          <input name="leimu" class="input" type="text" placeholder="终端号" value="{{leimu}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">秘钥</view>
+        <view class="label-right">
+          <input name="mobile" class="input" type="text" placeholder="填写打印机秘钥"  value="{{mobile}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">位置</view>
+        <view class="label-right">
+          <radio-group bindchange="radioChange">
+            <label class="radio" style='margin-right:30rpx;'>
+              <radio value="1" checked="true" />前台
+            </label>
+            <label class="radio">
+              <radio value="2" checked="false" />后厨
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+    </view>
+    <button type="warn" class="save-btn" formType="submit">添加</button>
+  </form>
+</view>

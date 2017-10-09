@@ -1,0 +1,21 @@
+/* pages/mingxi-detail/index.wxss */
+.container{
+  color: #333;
+  padding: 30rpx;
+}
+.t1{
+  display: flex;
+  justify-content: space-between;
+}
+.t2{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin: 30rpx 0 20rpx 0;
+}
+.detail{
+padding-left:60rpx;
+line-height: 2rem; 
+}
+.detail .item{
+  margin-right: 20rpx;
+}

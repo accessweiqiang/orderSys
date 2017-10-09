@@ -37,6 +37,7 @@
 }
 .line-gray{
 background: #e6e6e6;
+height: 10rpx;
 }
 .navigator-hover {
     background:#e8e8e8 !important;
@@ -76,6 +77,18 @@ background: #e6e6e6;
 .modal  .bottom-btn {
   display: flex;
   justify-content: center;
+  background:#e32910; 
+  height: 80rpx;
+  position: relative;
+}
+.modal  .bottom-btn::after{
+  content: '';
+  position: absolute;
+  height: 60rpx;
+  width: 2rpx;
+  top:10rpx;
+  left: 50%;
+  background: #fff;
 }
 .modal  .bottom-btn .btn{
   width: 50%;

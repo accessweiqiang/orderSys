@@ -14,7 +14,7 @@
     <view class="text">暂无订单</view>
   </view>
   <view class="order-list" hidden="{{orderList ? false : true}}">
-    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{unique}}">
       <image class="photo" src="{{item.pic}}"></image>
       <view class='order-info'>
         <view class='custom'>客户：{{item.customer}}</view>

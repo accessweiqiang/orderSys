@@ -4,17 +4,15 @@
     <view class="text">暂无订单</view>
   </view>
   <view class="order-list" hidden="{{orderList ? false : true}}">
-    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+    <view class="a-order" wx:for="{{orderList}}" wx:key="{{key}}">
       <image class="photo" src="{{item.pic}}"></image>
       <view class='order-info'>
         <view class='custom'>{{item.customer}}</view>
         <view class="order-date">
           <view>{{item.dateAdd}}</view>
         </view>
-        <view class="order-status">未处理</view>
+        <view class="order-status" bindtap='orderDetail'>去处理</view>
       </view>
     </view>
-
-
   </view>
 </view>

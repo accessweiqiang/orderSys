@@ -21,12 +21,20 @@
     "pages/category/index",
     "pages/shangpin/index",
     "pages/shangpin-add/index"
+    "pages/caidan/index",
+    "pages/mingxi-detail/index",
+    "pages/caidan-detail/index",
+    "pages/caiwu/index",
+    "pages/setting/index",
+    "pages/printer/index",
+    "pages/setting-baseInfo/index",
+    "pages/printer-add/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "点餐宝",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#e32910"
   },
   "tabBar": {
     "color": "#6e6d6b",
@@ -43,12 +51,14 @@
       },
       {
         "pagePath": "pages/home/home",
+        "pagePath": "pages/caidan/index",
         "iconPath": "images/tab/menu-off.png",
         "selectedIconPath": "images/tab/menu-off.png",
         "text": "菜单"
       },
       {
         "pagePath": "pages/home/home",
+        "pagePath": "pages/setting/index",
         "iconPath": "images/tab/setting-off.png",
         "selectedIconPath": "images/tab/setting-off.png",
         "text": "设置"

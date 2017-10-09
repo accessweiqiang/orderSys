@@ -13,11 +13,108 @@
 	"condition": {
 		"weapp": {
 			"current": 8,
+			"current": 2,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "index",
-					"pathName": "pages/index/index",
+					"pathName": "pages/address-add/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "今日订单",
+					"pathName": "pages/today-order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "最新订单",
+					"pathName": "pages/new-order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收支明细",
+					"pathName": "pages/mingxi/index",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "订单详情",
+					"pathName": "pages/order-detail/index",
+					"query": "id=2222"
+				},
+				{
+					"id": 6,
+					"name": "商品分类",
+					"pathName": "pages/category/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "今日营业额",
+					"pathName": "pages/turnover/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "原页面",
+					"pathName": "pages/address-add/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "菜单",
+					"pathName": "pages/caidan/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "明细详情",
+					"pathName": "pages/mingxi-detail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "营业额",
+					"pathName": "pages/turnover/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "菜单详情",
+					"pathName": "pages/caidan-detail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "财务信息",
+					"pathName": "pages/caiwu/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setting/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打印机管理",
+					"pathName": "pages/printer/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置-基本信息",
+					"pathName": "pages/setting-baseInfo/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "打印机-add",
+					"pathName": "pages/printer-add/index",
 					"query": ""
 				},
 				{

@@ -1,0 +1,13 @@
+<view class="container">
+  <view class='main'>
+    <image class='photo' src='/images/icon/default.png'></image>
+    <view class='no-data' wx:if="{{!list.length>0}}">您当前还没有关联任何打印机</view>
+    <view class='list'>
+      <view class='item' wx:for="{{list}}" wx:key="unique">
+        <label>{{item.name}}</label>
+        <view class='delete-btn red'>删除</view>
+      </view>
+    </view>
+  </view>
+  <navigator class="to-add bg-red" open-type='navigate' url='/pages/printer-add/index'>添加打印机</navigator>
+</view>
