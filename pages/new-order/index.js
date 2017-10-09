@@ -41,9 +41,7 @@ Page({
 
   },
   contact: function (e) {
-    wx.makePhoneCall({
-      phoneNumber: e.target.dataset.tel //仅为示例，并非真实的电话号码
-    })
+   
   },
   onHide: function () {
     // 生命周期函数--监听页面隐藏

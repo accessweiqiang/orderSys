@@ -1,0 +1,26 @@
+<view class="container">
+  <scroll-view class='header coupons-scroll' scroll-x="true">
+    <view class='coupons-item active'>家常菜</view>
+    <view class='coupons-item'>小吃类</view>
+    <view class='coupons-item'>汤类</view>
+    <view class='coupons-item'>饮料</view>
+    <view class='coupons-item'>饮料</view>
+    <view class='coupons-item'>饮料</view>
+  </scroll-view>
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:for-item="item" wx:key="{{index}}">
+      <image class="photo" src="{{item.pic}}"></image>
+      <view class='item-info'>
+        <view class='name'>{{item.name}}</view>
+        <view class='price'>单价:<text class='red'>{{item.price}}</text>元</view>
+        <view class="number">销量：{{item.number}}</view>
+        <view class="date">添加日期：{{item.number}}</view>
+        <view class="edit">编辑</view>
+        <view class="delete"></view>
+      </view>
+    </view>
+  </view>
+  <view class="no-data" hidden='{{list.length>0}}'>
+    暂无商品
+  </view>
+</view>

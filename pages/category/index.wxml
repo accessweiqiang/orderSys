@@ -1,0 +1,36 @@
+<!--home.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+  <view class='tip'>
+    分类准确有助于用户筛选
+  </view>
+  <view class='line-gray' style='height:10rpx;'></view>
+  <view class='main' scroll-y="true">
+    <view class='list'>
+      <view class='item {{index==currentIndex?"active":""}}' wx:for="{{items}}" wx:key="index" bindtap='select' data-index='{{index}}'>
+        <view class='top-ch'>
+          <view class='name'>小吃</view>
+          <view class='number text-right'>共两件2件商品</view>
+        </view>
+        <view class='children'>
+          <view>花生</view>
+          <view>花生</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='comlete-btn'>完成</view>
+</view>
+<view class='modal none'>
+  <view class='mask'></view>
+  <view class='modal-content'>
+    <form>
+      <view class='title'>请输入名称</view>
+      <input type='text' class='category-name' placeholder="输入分类名称"></input>
+      <view class='bottom-btn'>
+        <view class='cancel btn'>取消</view>
+        <view class='ok btn bg-red'>确定</view>
+      </view>
+    </form>
+  </view>
+</view>

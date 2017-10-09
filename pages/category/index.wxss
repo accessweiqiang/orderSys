@@ -1,0 +1,90 @@
+/* pages/category/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main{
+  margin-bottom: 100rpx;
+}
+.tip {
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+}
+
+.top-ch {
+  display: flex;
+  padding-left: 30rpx;
+  align-items: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  justify-content: space-between;
+}
+
+.top-ch .name, .number {
+  width: 45%;
+  position: relative;
+}
+.top-ch .name{
+  padding-left: 50rpx;
+}
+.top-ch  .number{
+  padding-right: 50rpx;
+}
+.top-ch  .name::after {
+  content: '';
+  display: inline-block;
+  height: 30rpx;
+  width: 30rpx;
+  border-radius: 100%;
+  border: 1px solid #e32910;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 30rpx;
+}
+.item.active  .name::after {
+  background: #e32910;
+}
+.top-ch  .number::after {
+  content: '';
+  display: inline-block;
+  height: 30rpx;
+  width: 30rpx;
+  border-radius: 100%;
+  position: absolute;
+  right: 10rpx;
+  top: 30rpx;
+  background: url(https://www.wendin.cn/public/images/page/arrow.png) no-repeat;
+  background-size: contain;
+}
+.item.active  .number::after {
+  transform: rotateZ(90deg) translateX(4rpx);
+}
+.children{
+  color: #666666;
+  padding-left: 100rpx;
+  background: #f7f7f7;
+  display: none;
+}
+.item.active .children{
+  display: block;
+}
+.modal .category-name{
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 20rpx 20rpx;
+  text-align: center;
+  border-bottom:1px solid #f1f1f1; 
+}
+.comlete-btn{
+  background: #e32910;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
