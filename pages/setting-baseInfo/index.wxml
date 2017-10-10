@@ -1,13 +1,19 @@
 <view class="container">
   <view class='photo' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
-  <text class='updatePhoto' bindtap='updatePhoto'>修改</text>
+  <text class='updatePhoto red' bindtap='updatePhoto'>修改图片</text>
   <view class='line-gray'></view>
   <form bindsubmit="bindSave">
     <view class="form-box">
       <view class="row-wrap">
         <view class="label">店名</view>
         <view class="label-right">
-          <input name="shopName" class="input" type="text" placeholder="店名" value="{{shopName}}" />
+          <input name="name" class="input" type="text" placeholder="店名" value="{{name}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">老板名字</view>
+        <view class="label-right">
+          <input name="boss" class="input" type="text" placeholder="老板名字" value="{{boss}}" />
         </view>
       </view>
       <view class="row-wrap">
@@ -17,21 +23,21 @@
         </view>
       </view>
       <view class="row-wrap">
-        <view class="label">主营类目</view>
+        <view class="label">联系电话</view>
         <view class="label-right">
-          <input name="leimu" class="input" type="text" placeholder="主营类目" value="{{leimu}}" />
+          <input name="connectPhone" class="input" type="number" placeholder='联系电话' value="{{connectPhone}}" />
         </view>
       </view>
       <view class="row-wrap">
-        <view class="label">联系电话</view>
+        <view class="label">主营类目</view>
         <view class="label-right">
-          <input name="mobile" class="input" type="number" value="{{mobile}}" />
+          <input name="mainCategory" class="input" type="text" placeholder="主营类目" value="{{mainCategory}}" />
         </view>
       </view>
       <view class="addr-details">
         <view class="label">店铺介绍</view>
         <view class="label-right">
-          <textarea name="introduce" auto-height placeholder="店铺介绍" value="{{introduce}}" />
+          <textarea name="restaurantIntroduce" auto-height placeholder="店铺介绍" value="{{restaurantIntroduce}}" />
         </view>
       </view>
 
