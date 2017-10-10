@@ -12,7 +12,7 @@
 	"projectname": "TEST",
 	"condition": {
 		"weapp": {
-			"current": 11,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,

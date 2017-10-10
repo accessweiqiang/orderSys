@@ -11,7 +11,7 @@
 .item{
   display: flex;
   justify-content: space-around;
-  height: 120rpx;
+  height: 100rpx;
   margin-top: 30rpx;
   border-bottom: 1px #e6e6e6 solid;
   padding-bottom: 30rpx;
@@ -22,8 +22,8 @@
   text-indent: 20rpx;
 }
 .photo{
-  width: 120rpx;
-  height: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 .info{
   width: 50%;
