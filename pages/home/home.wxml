@@ -6,9 +6,9 @@
       <image class="photo" src='/images/shangjia.png'></image>
       <view class='info'>
         <view class='name'>{{storeInfo.name}}</view>
-        <view class='introduce'>{{storeInfo.introduce}}</view>
+        <view class='introduce'>{{storeInfo.restaurantIntroduce}}</view>
         <view class='expire'>
-          <view>{{storeInfo.expire}}天</view>
+          <view>{{storeInfo.createDate}}天</view>
           <view style='font-size:22rpx;'>剩余时间</view>
         </view>
       </view>

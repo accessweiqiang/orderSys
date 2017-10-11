@@ -1,14 +1,15 @@
-.add-btn{
+.add-btn {
   position: fixed;
-  bottom:0;
+  bottom: 0;
   width: 100%;
   text-align: center;
   height: 80rpx;
   line-height: 80rpx;
-  border-top: 1px solid #e32910; 
+  border-top: 1px solid #e32910;
   background: #fff;
 }
-.item{
+
+.item {
   display: flex;
   justify-content: space-around;
   height: 100rpx;
@@ -16,32 +17,38 @@
   border-bottom: 1px #e6e6e6 solid;
   padding-bottom: 30rpx;
 }
-.image-warp{
+
+.image-warp {
   width: 130rpx;
   text-align: right;
   text-indent: 20rpx;
 }
-.photo{
+
+.photo {
   width: 100rpx;
   height: 100rpx;
 }
-.info{
+
+.info {
   width: 50%;
 }
 
-.delete-btn{
-width: 20%;
-text-align: right;
-line-height: 120rpx;
-font-size: 30rpx;
+.delete-btn {
+  width: 20%;
+  text-align: right;
+  line-height: 120rpx;
+  font-size: 30rpx;
 }
-.name{
+
+.name {
   font-size: 32rpx;
   font-weight: bold;
 }
-.type{
+
+.type {
   margin: 5rpx 0;
 }
-.number{
+
+.number {
   color: gray;
 }

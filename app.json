@@ -28,6 +28,7 @@
     "pages/setting/index",
     "pages/printer/index",
     "pages/setting-baseInfo/index",
+    "pages/setting-regist/index",
     "pages/printer-add/index",
     "pages/bankcard/index"
   ],

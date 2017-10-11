@@ -97,21 +97,34 @@
   width: 24rpx;
   height: 24rpx;
 }
-
-.add-btn{
-  position: fixed;
+.btn-wrap{
+ position: fixed;
   bottom:0;
   width: 100%;
   text-align: center;
-  height: 80rpx;
-  line-height: 80rpx;
   border-top: 1px solid #e32910; 
   background: #fff;
 }
-.add-btn image {
-  width: 50rpx;
-  height: 50rpx;
+.btn-wrap::after{
+  content: '';
+  position: absolute;
+  height: 80rpx;
+  width: 2rpx;
+  left: 50%;
+  top: 0;
+  display: block;
+  background: #e32910;
+}
+.btn{
+  width: 50%;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.btn image {
+  width: 40rpx;
+  height: 40rpx;
   vertical-align: middle;
   position: relative;
-  top: -4rpx;
+  top: -2rpx;
 }

@@ -6,7 +6,7 @@
           <view class='icon icon1'></view>
           <text class='bold'>基本信息</text>
         </label>
-        <navigator class='nav-btn' open-type='navigate' url='/pages/setting-baseInfo/index'>修改</navigator>
+        <view class='nav-btn' bindtap='toEditBaseInfo'>修改</view>
       </view>
       <view class='children'>
         <view class='title'>
@@ -23,24 +23,28 @@
             <view class='icon icon2'></view>
             <text class='bold'>店铺名称</text>
           </label>
+          <text>{{storeInfo.name}}</text>
         </view>
         <view class='title'>
           <label class="label">
             <view class='icon icon3'></view>
             <text class='bold'>主营类别</text>
           </label>
+          <text>{{storeInfo.mainCategory}}</text>          
         </view>
         <view class='title'>
           <label class="label">
             <view class='icon icon4'></view>
             <text class='bold'>店铺地址</text>
           </label>
+          <text>{{storeInfo.address}}</text>          
         </view>
         <view class='title'>
           <label class="label">
             <view class='icon icon5'></view>
             <text class='bold'>联系电话</text>
           </label>
+          <text>{{storeInfo.connectPhone}}</text>          
         </view>
       </view>
     </view>

@@ -1,5 +1,6 @@
 <view class="container">
-  <view class='photo' bindtap='updatePhoto' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
+  <view class='photo' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
+  <text class='updatePhoto red' bindtap='updatePhoto'>修改图片</text>
   <view class='line-gray'></view>
   <form bindsubmit="bindSave">
     <view class="form-box">

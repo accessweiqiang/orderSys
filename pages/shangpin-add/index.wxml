@@ -1,31 +1,40 @@
 <view class="container">
-  <view class='banner' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'>
-    <view bindtap='uploadImage'>
-      <image src='https://www.wendin.cn/public/images/icon//UpIoad-pictures@2x.png'></image>
-      <view>点击上传照片</view>
+  <form bindsubmit="bindSave">
+    <view class='banner' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'>
+      <view bindtap='uploadImage'>
+        <image src='https://www.wendin.cn/public/images/icon//UpIoad-pictures@2x.png'></image>
+        <input class='none' type='text' name="url" value='https://wx.qlogo.cn/mmhead/Q3auHgzwzM73FXdQZsr1T0eRjOg7PhY9wP69EIiaazTrybZ6upPK2pg/0' />
+        <view>点击上传照片</view>
+      </view>
     </view>
-  </view>
-  <view class="info">
-    <view class="row-box">
-      <view class="row-label">名称:</view>
-      <input type='text' placeholder='请输入名称' />
+    <view class="info">
+      <view class="row-box">
+        <view class="row-label">名称:</view>
+        <input type='text' placeholder='请输入名称' name="goodsName" />
+      </view>
+      <view class="row-box">
+        <view class="row-label">规格：</view>
+        <input type='text' placeholder='请输入规格' name="standard" />
+      </view>
+      <view class="row-box">
+        <view class="row-label">价格：</view>
+        <input type='text' placeholder='请输入价格' name="price" />
+      </view>
+       <view class="row-box">
+        <view class="row-label">折扣：</view>
+        <input type='text' placeholder='请输折扣' name="discount" />
+      </view>
+      
+      <view class="row-box">
+        <view class="row-label">分类：</view>
+        <input type='text' placeholder='分类' value='2c92d59e5f07348e015f0af6b43b0008' name="menubarId" />
+      </view>
+      <view class="row-box  intro-box">
+        <view class="row-label">介绍：</view>
+        <textarea auto-height placeholder='介绍' class='intro' name="detail"></textarea>
+      </view>
     </view>
-    <view class="row-box">
-      <view class="row-label">规格：</view>
-      <input type='text' placeholder='请输入规格' />
-    </view>
-    <view class="row-box">
-      <view class="row-label">价格：</view>
-      <input type='text' placeholder='请输入价格' />
-    </view>
-    <view class="row-box">
-      <view class="row-label">分类：</view>
-      <input type='text' placeholder='分类' />
-    </view>
-    <view class="row-box  intro-box">
-      <view class="row-label">介绍：</view>
-      <textarea auto-height placeholder='介绍' class='intro'></textarea>
-    </view>
-  </view>
-  <view class='operate'>确定</view>
+    <button class='operate' formType="submit" >确定</button>
+  </form>
+
 </view>

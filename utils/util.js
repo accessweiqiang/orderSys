@@ -16,6 +16,16 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function obj2query(obj) {
+  var query = '';
+  for(var item in obj ){
+    query+=item+"="+obj[item]+"&";
+  }
+  return query.slice(0, -1);
+}
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  obj2query: obj2query
 }

@@ -22,21 +22,37 @@ Page({
     swiperCurrent: 0,
     selectCurrent: 0
   },
+  //https://www.wendin.cn/dcb/wxrestaurant.do?getMyRestaurant&sessionId=8874429239226273254
+  //获取餐馆信息
+  getMyRestaurant:function(){
+    var that = this;
+    wx.request({
+      url: 'https://www.wendin.cn/dcb/wxrestaurant.do?getMyRestaurant',
+      data: { sessionId: app.globalData.sessionId},
+      method:'POST',
+      header:{
+        'content-type':"application/x-www-form-urlencoded"
+      },
+      success:function(res){
+        console.log(res);
+        var data = res.data.attributes;
+        that.setData({
+          storeInfo: data
+        });
+        app.globalData.storeInfo=data;
+      }
+    })
+  },
   //事件处理函数
   swiperchange: function (e) {
-    //console.log(e.detail.current)
-    this.setData({
+    that.setData({
       swiperCurrent: e.detail.current
     })
   },
-  doLogin:function(code){
-   
-  },
   onShow: function () {
-    console.log(99)
+
   },
   onLoad: function () {
-    
-
+    this.getMyRestaurant()
   }
 })
