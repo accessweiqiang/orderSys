@@ -1,70 +1,103 @@
 // pages/bankcard/index.js
+var util = require('../../utils/util.js')
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[
-      { photo: "https://www.wendin.cn/public/images/page/bank.png", name: "工商银行", type: "储蓄卡", number:"58852357"},
-      { photo: "https://www.wendin.cn/public/images/page/bank.png", name: "工商银行", type: "储蓄卡", number: "58852357" },
-      { photo: "https://www.wendin.cn/public/images/page/bank.png", name: "工商银行", type: "储蓄卡", number: "58852357" }
+    list: [
+
     ]
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
+  getList: function () {
+    var that = this;
+    wx.request({
+      url: "https://www.wendin.cn/dcb/wxbankcard.do?getByRestaurantNo&restaurantNo=" + app.globalData.storeInfo.no + "&sessionId=" + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      success: function (res) {
+        console.log(res)
+        var data = res.data;
+        if (!data.success) {
+          wx.hideLoading();
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel: false
+          })
+        } else {
+          that.setData({
+            list: data.obj
+          })
+        }
+      }
+    })
+  },
+  toEdit: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var item = this.data.list[index];
+    var query = util.obj2query(item);
+    wx.navigateTo({
+      url: '/pages/bankcard-add/index?' + query,
+    })
+  },
+  doDelete: function (id) {
+    var that = this;
+    wx.showLoading({
+      title: '删除中',
+    })
+    wx.request({
+      url: "https://www.wendin.cn/dcb/wxbankcard.do?deleteByIds&sessionId=" + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      data: { ids:id },
+      complete: function () {
+        wx.hideLoading()
+      },
+      success: function (res) {
+        var data = res.data;
+        if (data.success) {
+          wx.showModal({
+            title: '提示',
+            content: '删除成功',
+          });
+          that.onShow();
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+          })
+        }
+      }
+    })
+  },
+  showDelete: function (e) {
+    var name = e.currentTarget.dataset.name;
+    var id = e.currentTarget.dataset.id;
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除:' + name,
+      success: function (res) {
+        if (res.confirm) {
+          that.doDelete(id);
+        }
+      }
+    })
+  },
   onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    this.getList()
   }
+
+
 })

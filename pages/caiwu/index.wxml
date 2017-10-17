@@ -42,7 +42,7 @@
     </view>
   </view>
   <view class='btn-wrap'>
-    <view class='btn'>提现</view>
+    <navigator class='btn' url='/pages/caiwu-tixian/index'>提现</navigator>
   </view>
 
 </view>

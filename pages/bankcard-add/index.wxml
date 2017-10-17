@@ -1,0 +1,39 @@
+<view class="container">
+  <form bindsubmit="bindSave">
+    <input type='text' class='none' placeholder='银行卡名称' name="id" value='{{id}}' />
+    <view class="info">
+      <view class="row-box">
+        <view class="row-label">银行名称:</view>
+        <input type='text' placeholder='银行卡名称（必填）' name="bankName" value='{{bankName}}' />
+      </view>
+      <view class="row-box">
+        <view class="row-label">卡号：</view>
+        <input type='text' placeholder='卡号（必填）' name="cardNo" value='{{cardNo}}' />
+      </view>
+      <view class="row-box">
+        <view class="row-label">户主：</view>
+        <input type='text' placeholder='户主（必填）' name="cardHolder" value='{{cardHolder}}' />
+      </view>
+      <view class="row-box">
+        <view class="row-label">开户支行：</view>
+        <input type='text' placeholder='开户支行' name="bankDeposit" value='{{bankDeposit}}' />
+      </view>
+      <view class="row-box">
+        <view class="row-label">开户手机号：</view>
+        <input type='number' placeholder='手机号（必填）' name="holderMobile" value='{{holderMobile}}' />
+      </view>
+      <view class="row-box">
+        <view class="row-label">开户人身份证：</view>
+        <input type='text' placeholder='身份证号（必填）' name="holderIdCard" value='{{holderIdCard}}' />
+      </view>
+      <picker mode="date" value='{{validDate}}' bindchange='bindDateChange'>
+        <view class="row-box">
+          <view class="row-label">银行卡有效期：</view>
+          <input type='text' disabled='true' placeholder='有效期' name="validDate" value='{{validDate}}' />
+        </view>
+      </picker>
+    </view>
+    <button class='operate' formType="submit">确定</button>
+  </form>
+
+</view>

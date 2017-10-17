@@ -1,17 +1,20 @@
 <view class="container">
   <view class='list'>
-    <view class='item' wx:for="{{list}}" wx:key="unique">
+    <view class='item' wx:for="{{list}}" wx:key="unique" >
     <view class='image-warp'>
-      <image class='photo' src='{{item.photo}}'></image></view>
+      <image class='photo' src='/images/page/bankcard.png'></image></view>
       <view class='info'>
-        <view class='name'>{{item.name}}</view>
-        <view class='type'>{{item.type}}</view>
-        <view class='number'>{{item.number}}</view>
+        <view class='name'>{{item.bankName}}</view>
+        <view class='type'>储蓄卡</view>
+        <view class='number'>{{item.cardNo}}</view>
       </view>
-      <view class='delete-btn red'>删除</view>
+      <view class='btn-wrap'>
+        <view class='red'  bindtap='showDelete' data-name='{{item.bankName}}' data-id='{{item.id}}'> 删除</view>
+        <view data-index='{{index}}' bindtap='toEdit'>编辑</view>
+      </view>
     </view>
   </view>
-  <navigator class='add-btn' open-type='navigate' url='/pages/shangpin-add/index'>
+  <navigator class='add-btn' open-type='navigate' url='/pages/bankcard-add/index'>
     + 添加银行卡
   </navigator>
 </view>

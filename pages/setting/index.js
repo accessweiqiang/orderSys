@@ -33,6 +33,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this;
     wx.request({
       url: 'https://www.wendin.cn/dcb/wxrestaurant.do?getMyRestaurant',
@@ -49,13 +56,6 @@ Page({
         });
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log(99)
   }
 
 })

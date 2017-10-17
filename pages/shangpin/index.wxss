@@ -1,10 +1,19 @@
 /* pages/shangpin/index.wxss */
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  height: 90rpx;
+  z-index: 10;
+  box-shadow: 0px 2px 3px #aaa;
+}
 
 .coupons-scroll {
   white-space: nowrap;
   width: 100%;
-  background-color: #fff;
   height: 90rpx;
   line-height: 90rpx;
 }
@@ -18,7 +27,8 @@
   display: inline-block;
   font-weight: bold;
 }
-.coupons-item.active{
+
+.coupons-item.active {
   color: #e32910;
 }
 
@@ -33,17 +43,17 @@
   background-color: #f2f2f2;
 }
 
-
-
-
 .list {
   width: 100%;
-  margin-top: 20rpx;
+  margin-top: 100rpx;
   margin-bottom: 80rpx;
+  height: 990rpx;
 }
-.item-info{
- max-width:45%; 
+
+.item-info {
+  max-width: 45%;
 }
+
 .list .item {
   width: 100%;
   margin-bottom: 2rpx;
@@ -59,22 +69,26 @@
   margin-left: 20rpx;
   margin-right: 30rpx;
 }
-.list .item .name{
+
+.list .item .name {
   font-size: 32rpx;
   font-weight: bold;
 }
-.list .item .price{
+
+.list .item .price {
   margin: 20rpx 0;
   font-size: 28rpx;
 }
 
-.list .item  .date,.list .item .number{
-  color: #666666;
+.list .item  .date, .list .item .number {
+  color: #666;
 }
-.list .item .number{
+
+.list .item .number {
   margin-bottom: 20rpx;
 }
-.edit,.delete {
+
+.edit, .delete {
   position: absolute;
   height: 50rpx;
   line-height: 50rpx;
@@ -87,7 +101,8 @@
   background: #fe0000;
   color: #fff;
 }
-.delete{
+
+.delete {
   background: url(https://www.wendin.cn/public/images/icon/delete.png) no-repeat;
   top: 10rpx;
   right: 30rpx;
@@ -97,15 +112,17 @@
   width: 24rpx;
   height: 24rpx;
 }
-.btn-wrap{
- position: fixed;
-  bottom:0;
+
+.btn-wrap {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   text-align: center;
-  border-top: 1px solid #e32910; 
+  border-top: 1px solid #e32910;
   background: #fff;
 }
-.btn-wrap::after{
+
+.btn-wrap::after {
   content: '';
   position: absolute;
   height: 80rpx;
@@ -115,12 +132,14 @@
   display: block;
   background: #e32910;
 }
-.btn{
+
+.btn {
   width: 50%;
   display: inline-block;
   height: 80rpx;
   line-height: 80rpx;
 }
+
 .btn image {
   width: 40rpx;
   height: 40rpx;

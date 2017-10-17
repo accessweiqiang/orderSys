@@ -1,0 +1,23 @@
+<view class="container">
+  <form bindsubmit="bindSave">
+    <view class="info">
+      <picker bindchange="bindPickerChange" class="picker" mode="selector" value="{{index}}" range="{{list}}" range-key="bankName">
+        <view class="row-box">
+          <view class="row-label">选择银行卡：</view>
+          <input type='text' disabled='true' placeholder='选择银行卡' name="bankName" value='{{bankName}}' />
+          <input type='text' class='none'  name="bankcard.id" value='{{bankcardId}}' />
+        </view>
+      </picker>
+      <view class="info">
+        <view class="row-box">
+          <view class="row-label">提现金额：</view>
+          <input type='text' placeholder='提现金额' name="applyMoney" value='{{applyMoney}}' />
+        </view>
+      </view>
+    </view>
+    <view class='btn-wrap'>
+      <button class='operate' formType="submit">确定</button>
+    </view>
+  </form>
+
+</view>
