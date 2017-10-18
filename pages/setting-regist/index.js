@@ -2,9 +2,24 @@
 var app = getApp()
 Page({
   data: {
-    photo:''
+    photo:'',
+    storeInfo:{
+      name: "a",
+      boss: "f",
+      connectPhone: "15",
+      address: "成都0000",
+      restaurantIntroduce: "介绍",
+      mainCategory:"小吃",
+    }
   },
   onShow:function(){
+    /*
+    wx.login({
+      success:function(res){
+        console.log(res)
+      }
+    })*/
+    
   },
   updatePhoto:function(){
     wx.chooseImage({
@@ -13,24 +28,7 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        console.log(res)
-        var tempFilePaths = res.tempFilePaths[0];
-        wx.uploadFile({
-          url: 'https://www.wendin.cn/dcb/wxfile.do?deal',
-          filePath: tempFilePaths,
-          name: 'file',
-          formData: {
-            'sessionId': app.globalData.sessionId,
-            "actionType":1
-          },
-          success: function (res) {
-            console.log(res)
-            var data = res.data
-          },
-          fail:function(res){
-            console.log(res)
-          }
-        })
+        var tempFilePaths = res.tempFilePaths
       }
     })
   },
@@ -45,14 +43,14 @@ Page({
    
     if (name==''||boss==""||connectPhone==""||address==""||restaurantIntroduce==""||mainCategory==""){
      wx.showToast({
-       title: '所填内容不完整！',
+       title: '所填内容不完整！fa',
        image:"/images/icon/fail.png"
       })
     }
     console.log(e.detail.value  )
     var params = e.detail.value;
     wx.request({
-      url: 'https://www.wendin.cn/dcb/wxrestaurant.do?save&no='+app.globalData.storeInfo.no+'&sessionId=' + app.globalData.sessionId,
+      url: 'https://www.wendin.cn/dcb/wxrestaurant.do?save&no=shop-1&sessionId=' + app.globalData.sessionId,
       data: params,
       method: 'POST',
       header: {
@@ -60,35 +58,23 @@ Page({
       },
       success: function (res) {
         if (!res.data.success) {
+          // 登录错误 
           wx.hideLoading();
           wx.showModal({
-            title: '提示',
+            title: '失败',
             content: res.data.msg,
             showCancel: false
-          })
-        }else{
-          wx.showModal({
-            title: '提示',
-            content: res.data.msg,
-            showCancel: false,
-            success: function (res) {
-              console.log(res)
-              if (res.confirm) {
-                wx.navigateBack({
-
-                })
-              }
-            }
           })
         }
       }
     })
   },
-  onLoad: function (option) {
-    console.log(option);
-    this.setData({
-      storeInfo: option
-    })
+  onLoad: function (e) {
+    
+  },
+ 
+  selectCity: function () {
+
   }
   
 })

@@ -74,4 +74,5 @@ width: 175rpx;
   background: #e32910;
   position: fixed;
   bottom: 0;
+  border-radius: 0;
 }

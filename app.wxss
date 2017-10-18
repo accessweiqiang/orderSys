@@ -94,9 +94,10 @@ height: 10rpx;
   width: 50%;
   height: 80rpx;
   line-height: 80rpx;
+  color:#fff;
   text-align: center;
+  font-size: 28rpx;
 }
 .modal  .bottom-btn .ok{
-  color:#fff;
   background:#e32910; 
 }

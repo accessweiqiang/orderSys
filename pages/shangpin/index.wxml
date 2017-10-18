@@ -12,7 +12,8 @@
       <image class="photo" src="{{item.pic}}"></image>
       <view class='item-info'>
         <view class='name'>{{item.name}}</view>
-        <view class='price'>单价:<text class='red'>{{item.price}}</text>元</view>
+        <view class='price'>单价:
+          <text class='red'>{{item.price}}</text>元</view>
         <view class="number">销量：{{item.number}}</view>
         <view class="date">添加日期：{{item.number}}</view>
         <view class="edit">编辑</view>
@@ -23,8 +24,15 @@
   <view class="no-data" wx:if='{{list.length==0}}'>
     暂无商品
   </view>
-  <navigator class='add-btn' open-type='navigate' url='/pages/shangpin-add/index'>
-  <image src='https://www.wendin.cn/public/images/icon/add.png'></image>
-  添加商品
-  </navigator>
+  <view class='btn-wrap'>
+    <navigator class='btn' open-type='navigate' url='/pages/shangpin-add/index'>
+      <image src='https://www.wendin.cn/public/images/icon/add.png'></image>
+      添加商品
+    </navigator>
+    <navigator class='btn' open-type='navigate' url='/pages/category/index'>
+      <image src='https://www.wendin.cn/public/images/icon/add.png'></image>
+      添加分类
+    </navigator>
+  </view>
+
 </view>

@@ -19,17 +19,17 @@
       </view>
     </view>
   </view>
-  <view class='comlete-btn'>完成</view>
+  <view class='comlete-btn' bindtap='showModal'>添加分类</view>
 </view>
-<view class='modal none'>
+<view class='modal' wx:if='{{modalShow}}'>
   <view class='mask'></view>
   <view class='modal-content'>
-    <form>
+    <form bindsubmit="bindSave">
       <view class='title'>请输入名称</view>
-      <input type='text' class='category-name' placeholder="输入分类名称"></input>
+      <input type='text' class='category-name' name="name" placeholder="输入分类名称"></input>
       <view class='bottom-btn'>
-        <view class='cancel btn'>取消</view>
-        <view class='ok btn bg-red'>确定</view>
+        <view class='cancel btn' bindtap='hideModal'>取消</view>
+        <button class='ok btn bg-red' formType="submit">确定</button>
       </view>
     </form>
   </view>
