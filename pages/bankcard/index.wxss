@@ -33,10 +33,10 @@
   width: 50%;
 }
 
-.delete-btn {
+.btn-wrap {
   width: 20%;
   text-align: right;
-  line-height: 120rpx;
+  line-height: 60rpx;
   font-size: 30rpx;
 }
 
@@ -47,8 +47,10 @@
 
 .type {
   margin: 5rpx 0;
+  font-size: 22rpx;
 }
 
 .number {
   color: gray;
+  font-size: 20rpx;
 }

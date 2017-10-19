@@ -2,6 +2,7 @@
   <view class='photo' bindtap='updatePhoto' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
   <view class='line-gray'></view>
   <form bindsubmit="bindSave">
+  <input name="environments" class="none" type="text" value="{{environments}}" />
     <view class="form-box">
       <view class="row-wrap">
         <view class="label">店名</view>

@@ -2,32 +2,43 @@
 var app = getApp()
 Page({
   data: {
-    photo:''
+    photo:'',
+    environments:""
   },
   onShow:function(){
   },
-  updatePhoto:function(){
+  updatePhoto: function () {
+    var that = this;
+    wx.showLoading();
     wx.chooseImage({
       count: 1, // 默认9
       sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      complete: function () {
+        wx.hideLoading();
+      },
       success: function (res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        console.log(res)
-        var tempFilePaths = res.tempFilePaths[0];
+        var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://www.wendin.cn/dcb/wxfile.do?deal',
-          filePath: tempFilePaths,
+          url: 'https://www.wendin.cn/dcb/wxfile.do?deal&actionType=1' + '&sessionId=' + app.globalData.sessionId,
+          filePath: tempFilePaths[0],
           name: 'file',
-          formData: {
-            'sessionId': app.globalData.sessionId,
-            "actionType":1
-          },
           success: function (res) {
             console.log(res)
-            var data = res.data
-          },
-          fail:function(res){
+            var data = JSON.parse(res.data);
+            if (data.success) {
+              var filePath = '';
+              for (var item in data.attributes) {
+                filePath = data.attributes[item];
+              }
+              wx.showToast({ title: "上传图片成功" });
+              that.setData({
+                "environments": filePath,
+                photo: 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + filePath + '&sessionId=' + app.globalData.sessionId
+              })
+            }
+            //do something
+          }, fail: function (res) {
             console.log(res)
           }
         })
@@ -42,12 +53,21 @@ Page({
     var address = e.detail.value.address;
     var restaurantIntroduce = e.detail.value.restaurantIntroduce;
     var mainCategory = e.detail.value.mainCategory;
+    var environments = e.detail.value.environments;
    
     if (name==''||boss==""||connectPhone==""||address==""||restaurantIntroduce==""||mainCategory==""){
      wx.showToast({
        title: '所填内容不完整！',
        image:"/images/icon/fail.png"
-      })
+      });
+      return false;
+    }
+    if (environments==""){
+      wx.showToast({
+        title: '请上传图片',
+        image: "/images/icon/fail.png"
+      });
+      return false;
     }
     console.log(e.detail.value  )
     var params = e.detail.value;
@@ -88,7 +108,11 @@ Page({
     console.log(option);
     this.setData({
       storeInfo: option
-    })
+    });
+    this.setData({
+      environments: option.environments
+    });
+    
   }
   
 })

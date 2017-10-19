@@ -103,3 +103,22 @@
 .print .item.active::before {
   background: #e32910;
 }
+.row-box2{
+  overflow: hidden;
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color: #000;
+  height: 90rpx;
+  line-height: 45rpx;
+}
+.t1{
+  max-width: 400rpx;
+  word-break: break-all;
+}
+.t2{
+  max-width: 300rpx;
+   word-break: break-all;
+}

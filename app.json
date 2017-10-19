@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/setupApp/index",
     "pages/home/home",
     "pages/index/index",
     "pages/goods-details/index",

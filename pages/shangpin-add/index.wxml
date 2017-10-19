@@ -3,31 +3,35 @@
     <view class='banner' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'>
       <view bindtap='uploadImage'>
         <image src='https://www.wendin.cn/public/images/icon//UpIoad-pictures@2x.png'></image>
-        <input class='none' type='text' name="url" value='https://wx.qlogo.cn/mmhead/Q3auHgzwzM73FXdQZsr1T0eRjOg7PhY9wP69EIiaazTrybZ6upPK2pg/0' />
+        <input class='none' type='text' name="goodsPictures" value='{{filePath}}' />
+        <input class='none' type='text' name="id" value='{{id}}' />
         <view>点击上传照片</view>
       </view>
     </view>
     <view class="info">
       <view class="row-box">
         <view class="row-label">名称:</view>
-        <input type='text' placeholder='请输入名称' name="goodsName" />
+        <input type='text' placeholder='请输入名称' name="goodsName" value='{{goodsName}}' />
       </view>
       <view class="row-box">
         <view class="row-label">规格：</view>
-        <input type='text' placeholder='请输入规格' name="standard" />
+        <input type='text' placeholder='请输入规格' name="standard" value='{{standard}}'/>
       </view>
       <view class="row-box">
         <view class="row-label">价格：</view>
-        <input type='text' placeholder='请输入价格' name="price" />
+        <input type='digit' placeholder='请输入价格（元）' name="price" value='{{price}}' />
       </view>
-       <view class="row-box">
+      <view class="row-box">
         <view class="row-label">折扣：</view>
-        <input type='text' placeholder='请输折扣' name="discount" />
+        <input type='digit' placeholder='请输折扣(0-10)' name="discount" value='{{discount}}' />
       </view>
-      
+
       <view class="row-box">
         <view class="row-label">分类：</view>
-        <input type='text' placeholder='分类' value='2c92d59e5f07348e015f0af6b43b0008' name="menubarId" />
+        <picker bindchange="bindPickerChange" class="picker" mode = "selector" value="{{index}}" range="{{categoryList}}" range-key="name">
+          <text>{{category.name}}</text>
+          <input type='text' class="none" name="menubarId" value="{{category.id}}" />
+        </picker>
       </view>
       <view class="row-box">
         <view class="row-label">分类：</view>
@@ -42,10 +46,10 @@
      
       <view class="row-box  intro-box">
         <view class="row-label">介绍：</view>
-        <textarea auto-height placeholder='介绍' class='intro' name="detail"></textarea>
+        <textarea auto-height placeholder='介绍' class='intro' name="detail" value='{{detail}}'></textarea>
       </view>
     </view>
-    <button class='operate' formType="submit" >确定</button>
+    <button class='operate' formType="submit">确定</button>
   </form>
 
 </view>

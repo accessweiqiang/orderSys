@@ -7,9 +7,9 @@
   <view class='line-gray' style='height:10rpx;'></view>
   <view class='main' scroll-y="true">
     <view class='list'>
-      <view class='item {{index==currentIndex?"active":""}}' wx:for="{{items}}" wx:key="index" bindtap='select' data-index='{{index}}'>
+      <view class='item {{index==currentIndex?"active":""}}' wx:for="{{list}}" wx:key="unique" bindtap='select' data-index="{{index}}" data-id="{{item.id}}">
         <view class='top-ch'>
-          <view class='name'>小吃</view>
+          <view class='name'>{{item.name}}</view>
           <view class='number text-right'>共两件2件商品</view>
         </view>
         <view class='children'>

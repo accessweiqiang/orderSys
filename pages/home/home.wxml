@@ -3,7 +3,7 @@
 <view class="container">
   <view class='store'>
     <view id="store-info">
-      <image class="photo" src='/images/shangjia.png'></image>
+      <image class="photo" wx:if="{photo}}" src='{{photo}}'></image>
       <view class='info'>
         <view class='name'>{{storeInfo.name}}</view>
         <view class='introduce'>{{storeInfo.restaurantIntroduce}}</view>
@@ -17,11 +17,11 @@
   </view>
   <view class='today-statistics full'>
     <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <view class='label'>{{todayInfo.order}}</view>
+      <view class='label'>{{todayOrderNum}}</view>
       <view>今日订单</view>
     </navigator>
     <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index'>
-      <view class='label'>{{todayInfo.turnover}}元</view>
+      <view class='label'>{{todayIncom}}元</view>
       <view >今日营业额</view>
     </navigator>
   </view>

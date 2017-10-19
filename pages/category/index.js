@@ -6,9 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items:[
-      {}, {}, {}
-    ],
+    list:[],
     currentIndex:null,
     modalShow:false
   },
@@ -23,32 +21,34 @@ Page({
       });
       return;
     }
-    console.log(e.detail.value)
     var params = e.detail.value;
+    wx.showLoading();
     wx.request({
-      url: 'https://www.wendin.cn/dcb/wxmenubar.do?doAdd&no=' + app.globalData.storeInfo.no+'&sessionId=' + app.globalData.sessionId,
+      url: 'https://www.wendin.cn/dcb/wxmenubar.do?doAdd&'+'&sessionId=' + app.globalData.sessionId,
       data: params,
       method: 'POST',
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
+      complete:function(){
+        wx.hideLoading();
+      },
       success: function (res) {
         if (!res.data.success) {
-          wx.hideLoading();
           wx.showModal({
             title: '提示',
             content: res.data.msg,
             showCancel: false
-          })
+          });
         } else {
           wx.showModal({
             title: '提示',
             content: res.data.msg,
             showCancel: false,
             success: function (res) {
-              console.log(res)
               if (res.confirm) {
                 that.hideModal();
+                that.getList();                          
               }
             }
           })
@@ -73,25 +73,44 @@ Page({
     });
   
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  getList:function(){
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: 'https://www.wendin.cn/dcb/wxmenubar.do?findByPro&sessionId=' + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      complete:function(){
+        wx.hideLoading()
+      },
+      success: function (res) {
+        console.log("分类列表",res);
+        var data = res.data
+        if(data.success){
+          that.setData({
+            list: data.attributes.menus
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel:false,
+            
+          })
+        }
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getList();
   },
 
   /**

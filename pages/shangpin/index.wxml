@@ -1,26 +1,24 @@
 <view class="container">
   <scroll-view class='header coupons-scroll' scroll-x="true">
-    <view class='coupons-item active'>家常菜</view>
-    <view class='coupons-item'>小吃类</view>
-    <view class='coupons-item'>汤类</view>
-    <view class='coupons-item'>饮料</view>
-    <view class='coupons-item'>饮料</view>
-    <view class='coupons-item'>饮料</view>
+    <view class='coupons-item {{index==currentCategory?"active":""}}' wx:for="{{category}}" data-id="{{item.id}}" data-index="{{index}}" wx:key="unique" bindtap="categorySwitch">
+      <text>{{item.name}}</text>
+    </view>
   </scroll-view>
-  <view class="list">
-    <view class="item" wx:for="{{list}}" wx:for-item="item" wx:key="{{index}}">
-      <image class="photo" src="{{item.pic}}"></image>
+  <scroll-view class="list" wx:if="{{list.length>0}}" scroll-y="true">
+    <view class="item" wx:for="{{list}}" wx:key="{{unique}}" data-id='{{item.id}}' data-menubarId="{{item.menubarId}}" wx:if="{{currentCategory?item.menubarId==currentCategoryId:true}}">
+      <image wx:if="{{item.goodsPictures}}" class="photo" src="https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath={{item.goodsPictures}}&sessionId={{sessionId}}"></image>
+      <image wx:if="{{!item.goodsPictures}}" class="photo" src="/images/icon/default.png"></image>      
       <view class='item-info'>
-        <view class='name'>{{item.name}}</view>
+        <view class='name'>{{item.goodsName}}</view>
         <view class='price'>单价:
-          <text class='red'>{{item.price}}</text>元</view>
+          <text class='red'>{{item.price}}</text>元/{{item.standard}}</view>
         <view class="number">销量：{{item.number}}</view>
         <view class="date">添加日期：{{item.number}}</view>
-        <view class="edit">编辑</view>
-        <view class="delete"></view>
+        <view class="edit" bindtap='toEdit' data-index="{{index}}">编辑</view>
+        <view class="delete" bindtap='showDelete' data-id='{{item.id}}' data-name='{{item.goodsName}}'></view>
       </view>
     </view>
-  </view>
+  </scroll-view>
   <view class="no-data" wx:if='{{list.length==0}}'>
     暂无商品
   </view>

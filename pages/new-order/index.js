@@ -1,19 +1,18 @@
-var wxpay = require('../../utils/pay.js')
 var app = getApp()
+var util = require("../../utils/util.js");
+/*
+首先下单（未处理），   1
+支付时（支付中），3
+支付 完（支付成功，待处理），5
+支付失败（支付失败），6
+商家看到订单（处理中），7
+商品上桌，（处理完成），8
+1 ，3 ，5 ，6 的状态系统自动维护，前台
+要维护的状态为7 ，8
+*/
 Page({
   data: {
-    statusType: ["已完成", "已关闭"],
-    currentType: 0,
-    tabClass: ["", "",],
     orderList: null
-  },
-  statusTap: function (e) {
-    var curType = e.currentTarget.dataset.index;
-    this.data.currentType = curType
-    this.setData({
-      currentType: curType
-    });
-    this.onShow();
   },
   orderDetail: function (e) {
     var orderId = e.currentTarget.dataset.id;
@@ -21,42 +20,48 @@ Page({
       url: "/pages/order-detail/index?id=" + orderId
     })
   },
-  onLoad: function (options) {
-    // 生命周期函数--监听页面加载
 
-  },
-  onReady: function () {
-    // 生命周期函数--监听页面初次渲染完成
-
+  getList: function () {
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    var date = new Date();
+    var timeStart = util.formatDate(date)+" :00:00:00";
+    var timeEnd = util.formatDate(date) + " :23:59:59";
+    wx.request({
+      url: "https://www.wendin.cn/dcb/wxorder.do?findByPro&sessionId=" + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      data:{/*
+        timeStart,
+        timeEnd,*/
+        status:1
+      },
+      complete: function () {
+        wx.hideLoading();
+      },
+      success: function (res) {
+        console.log(res)
+        var data = res.data;
+        if (!data.success) {
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel: false
+          })
+        } else {
+          that.setData({
+            orderList:data.attributes.orders
+          })
+        }
+      }
+    })
   },
   onShow: function () {
     // 获取订单列表
-
-    this.setData({
-      orderList: [
-        { "dateAdd": "2018-9-9", "statusStr": "已完成", "status": -1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "https://img.meituan.net/msmerchant/b60ca34725098c2510d9942ae34675ae417400.jpg@750w_320h_1e_1c", "tel": "18628977163" },
-        { "dateAdd": "2018-9-9", "statusStr": "已关闭", "status": 1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "http://p1.meituan.net/deal/e2f4eb1c2edd2fc2bc80783d4eeb42cc94206.jpg@180w_164h_1e_1c", "tel": "18628977163" }
-      ]
-    });
-
-  },
-  contact: function (e) {
-   
-  },
-  onHide: function () {
-    // 生命周期函数--监听页面隐藏
-
-  },
-  onUnload: function () {
-    // 生命周期函数--监听页面卸载
-
-  },
-  onPullDownRefresh: function () {
-    // 页面相关事件处理函数--监听用户下拉动作
-
-  },
-  onReachBottom: function () {
-    // 页面上拉触底事件的处理函数
-
+    this.getList();
   }
 })

@@ -1,5 +1,5 @@
-var wxpay = require('../../utils/pay.js')
-var app = getApp()
+var app = getApp();
+var util = require("../../utils/util.js")
 Page({
   data: {
     statusType: ["已完成", "已关闭"],
@@ -31,12 +31,14 @@ Page({
   },
   onShow: function () {
     // 获取订单列表
-
+    var todayOrder = app.globalData.todayOrder;
+    todayOrder.map(function(item){
+      var status = util.getOrderStatus(item.status);
+      item.status = status;
+      return item;
+    })
     this.setData({
-      orderList: [
-        { "dateAdd": "2018-9-9", "statusStr": "已完成", "status": -1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "https://img.meituan.net/msmerchant/b60ca34725098c2510d9942ae34675ae417400.jpg@750w_320h_1e_1c","tel":"18628977163" },
-        { "dateAdd": "2018-9-9", "statusStr": "已关闭", "status": 1, "orderNumber": "FF1245454", "customer": "魏强", "pic": "http://p1.meituan.net/deal/e2f4eb1c2edd2fc2bc80783d4eeb42cc94206.jpg@180w_164h_1e_1c", "tel": "18628977163" }
-      ]
+      todayOrder: todayOrder
     });
 
   },

@@ -34,7 +34,7 @@ width: 175rpx;
     font-size: 28rpx;
 }
 .info .row-box .row-label{
-  width: 120rpx;
+  width: 260rpx;
   padding-left: 20rpx;
   font-weight: bold;
 }
