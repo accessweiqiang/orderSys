@@ -25,12 +25,14 @@
     "pages/mingxi-detail/index",
     "pages/caidan-detail/index",
     "pages/caiwu/index",
+    "pages/caiwu-tixian/index",
     "pages/setting/index",
     "pages/printer/index",
     "pages/setting-baseInfo/index",
     "pages/setting-regist/index",
     "pages/printer-add/index",
-    "pages/bankcard/index"
+    "pages/bankcard/index",
+    "pages/bankcard-add/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

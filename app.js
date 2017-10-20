@@ -24,8 +24,8 @@ App({
   login: function () {
     var that = this;
     var sessionId = that.globalData.sessionId;
-    console.log(sessionId)
     if (!sessionId) {
+      console.log("没有sessionId")
       wx.login({
         success: function (res) {
           wx.request({
@@ -79,7 +79,7 @@ App({
   },
   globalData: {
     sessionId: null,
-    storeInfo: null,
+    storeInfo: {},
     subDomain: "mall",
     version: "1.6.1",
     shareProfile: '百款精品商品，总有一款适合您' // 首页转发的时候话术

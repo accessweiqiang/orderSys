@@ -43,7 +43,7 @@ height: 10rpx;
     background:#e8e8e8 !important;
 }
 .none{
-  display: none;
+  display: none !important;
 }
 .modal .mask{
   position: fixed;
