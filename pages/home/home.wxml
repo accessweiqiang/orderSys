@@ -3,13 +3,13 @@
 <view class="container">
   <view class='store'>
     <view id="store-info">
-      <image class="photo" wx:if="{photo}}" src='{{photo}}'></image>
+      <image class="photo" src='{{photo}}'></image>
       <view class='info'>
         <view class='name'>{{storeInfo.name}}</view>
         <view class='introduce'>{{storeInfo.restaurantIntroduce}}</view>
         <view class='expire'>
-          <view>{{storeInfo.createDate}}天</view>
-          <view style='font-size:22rpx;'>剩余时间</view>
+          <view>{{storeInfo.boss}}</view>
+          <view style='font-size:22rpx;'>(店主)</view>
         </view>
       </view>
       <image class="qr" src='https://www.wendin.cn/public/images/icon/qr.png'></image>
@@ -20,7 +20,7 @@
       <view class='label'>{{todayOrderNum}}</view>
       <view>今日订单</view>
     </navigator>
-    <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index'>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index?incom={{todayIncom}}'>
       <view class='label'>{{todayIncom}}元</view>
       <view >今日营业额</view>
     </navigator>
@@ -28,20 +28,20 @@
   <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
   <view class='manage-tab  full'>
     <navigator class='item' hover-class="navigator-hover" url='/pages/new-order/index'>
-      <image src='../../images/icon/latest-order.png'></image>
+      <image src='/images/icon/latest-order.png'></image>
       <view>最新订单</view>
     </navigator>
     <navigator class='item' hover-class="navigator-hover" url='/pages/shangpin/index'>
-      <image src='../../images/icon/commodity.png'></image>
+      <image src='/images/icon/commodity.png'></image>
       <view>商品管理</view>
     </navigator>
     <navigator class='item' hover-class="navigator-hover" url='/pages/caiwu/index'>
-      <image src='../../images/icon/financial.png'></image>
+      <image src='/images/icon/financial.png'></image>
       <view>财务信息</view>
     </navigator>
   </view>
-  <view id='show-image-wrap'>
-    <image src='/images/shangjia.png'></image>
+  <view id='show-image-wrap' wx:if="{{storeInfo.environments}}">
+    <image src='{{photo}}'></image>
   </view>
   <view class='notice'>
     <view class="notice_iteml">

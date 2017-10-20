@@ -1,18 +1,20 @@
 <view class="container">
   <form bindsubmit="bindSave">
+    <input type='text' class='none' name="bankcard.id" value='{{bankcardId}}' />
     <view class="info">
-      <picker bindchange="bindPickerChange" class="picker" mode="selector" value="{{index}}" range="{{list}}" range-key="bankName">
-        <view class="row-box">
-          <view class="row-label">选择银行卡：</view>
+      <view class="row-box">
+        <view class="row-label">选择银行卡：</view>
+        <picker bindchange="bindPickerChange" class="picker" mode="selector" value="{{index}}" range="{{list}}" range-key="bankName">
           <input type='text' disabled='true' placeholder='选择银行卡' name="bankName" value='{{bankName}}' />
-          <input type='text' class='none'  name="bankcard.id" value='{{bankcardId}}' />
-        </view>
-      </picker>
-      <view class="info">
-        <view class="row-box">
-          <view class="row-label">提现金额：</view>
-          <input type='text' placeholder='提现金额' name="applyMoney" value='{{applyMoney}}' />
-        </view>
+        </picker>
+      </view>
+      <view class="row-box">
+        <view class="row-label">提现金额：</view>
+        <input type='digit' placeholder='提现金额' name="applyMoney" value='{{applyMoney}}' />
+      </view>
+      <view class='ketixian'>
+        <text>可提现金额：{{amountMoney}}</text>
+        <text class='red' bindtap='selectAll'>全部提现</text>
       </view>
     </view>
     <view class='btn-wrap'>

@@ -33,8 +33,8 @@ Page({
     // 获取订单列表
     var todayOrder = app.globalData.todayOrder;
     todayOrder.map(function(item){
-      var status = util.getOrderStatus(item.status);
-      item.status = status;
+      var statusText = util.getOrderStatus(item.status);
+      item["statusText"] = statusText;
       return item;
     })
     this.setData({

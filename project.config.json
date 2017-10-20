@@ -9,7 +9,7 @@
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
 	"appid": "wx9e7bce5d561bb265",
-	"projectname": "TEST",
+	"projectname": "%E7%82%B9%E9%A4%90%E5%AE%9D",
 	"condition": {
 		"weapp": {
 			"current": -1,
@@ -53,7 +53,7 @@
 				{
 					"id": 6,
 					"name": "原页面",
-					"pathName": "pages/new-order/index",
+					"pathName": "pages/bankcard-add/index",
 					"query": ""
 				},
 				{
@@ -81,7 +81,7 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 11,
 					"name": "财务信息",
 					"pathName": "pages/caiwu/index",
 					"query": ""

@@ -1,16 +1,36 @@
+ <view class='search'>
+    <view class='section'>
+      <text>日期: </text>
+      <picker mode="date" value="{{timeStart}}" start="2015-09-01" end="2017-09-01" bindchange="bindTimeStart">
+        <view class="picker">
+          {{timeStart}}
+        </view>
+      </picker>
+      至
+      <picker mode="date" value="{{timeEnd}}" start="2015-09-01" end="2017-09-01" bindchange="bindTimeEnd">
+        <view class="picker">
+          {{timeEnd}}
+        </view>
+      </picker>
+    </view>
+    <view class='picker-btn'>
+      <text bindtap='search' class='btn'>点击查询</text>
+    </view>
+  </view>
 <view class="container">
-  <view class="no-order" wx:if="{{orderList ?false  : true}}">
+  <view class="no-order" wx:if="{{orderList.length==0 ?true : false}}">
     <view class="text">暂无订单</view>
   </view>
   <view class="order-list">
-    <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{index}}' class="a-order" wx:for="{{orderList}}" wx:key="{{unique}}" >
-      <image class="photo" src="{{item.pic}}"></image>
+    <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{item.id}}' class="a-order" wx:for="{{orderList}}" wx:key="unique">
+      <image class="photo" src="/images/icon/order.png" ></image>
       <view class='order-info'>
-        <view class='custom'>{{item.customer}}</view>
+        <view class='custom'>客户：{{item.customer}}</view>
+        <view class='order-no'>{{item.id}}</view>
         <view class="order-date">
-          <view>{{item.dateAdd}}</view>
+          <view>{{item.createTime}}</view>
         </view>
-        <view class="order-status">+18</view>
+        <view class="order-status">+{{item.factPrice}}</view>
       </view>
     </navigator>
   </view>

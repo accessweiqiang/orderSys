@@ -39,11 +39,8 @@
 background: #e6e6e6;
 height: 10rpx;
 }
-.navigator-hover {
-    background:#e8e8e8 !important;
-}
 .none{
-  display: none;
+  display: none !important;
 }
 .modal .mask{
   position: fixed;
@@ -100,4 +97,10 @@ height: 10rpx;
 }
 .modal  .bottom-btn .ok{
   background:#e32910; 
+}
+.no-order,.no-data {
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+  color: #999;
 }

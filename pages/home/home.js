@@ -5,10 +5,9 @@ var util = require("../../utils/util.js");
 Page({
   data: {
     storeInfo: {
-     
     },
     todayOrderNum:"",
-    todayIncom:""
+    todayIncom:"",
   },
   //https://www.wendin.cn/dcb/wxrestaurant.do?getMyRestaurant&sessionId=8874429239226273254
   //获取餐馆信息
@@ -23,12 +22,12 @@ Page({
       },
       success:function(res){
         console.log(res);
-        /*
-      {"obj":null,"msg":"成功获取自己的餐馆","success":true,"attributes":{"amountMoney":null,"address":"成都高新区","restaurantIntroduce":"我哦阿什顿发建设大街开发","no":"shop-1","allMoney":630,"boss":"李老板","name":"炸鸡店","mainCategory":"小吃","connectPhone":"18628977163","createDate":"2017-10-10 23:47:59"}}
-        */
         var data = res.data.attributes;
         var environments = data.environments;
-        var photo = 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + environments + '&sessionId=' + app.globalData.sessionId
+        var photo = "/images/page/store-img.png";
+        if (environments){
+           photo = 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + environments + '&sessionId=' + app.globalData.sessionId
+        }
         that.setData({
           storeInfo: data,
           photo
@@ -51,9 +50,9 @@ Page({
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      data: {/*
+      data: {
         timeStart,
-        timeEnd,*/
+        timeEnd
       },
       complete: function () {
         wx.hideLoading();
@@ -72,9 +71,10 @@ Page({
           var todayIncom = 0;
           var length = todayOrder.length;
           for (var i = 0; i < length;i++){
-            
             var item = todayOrder[i];
-            todayIncom +=item.factPrice;
+            if (item.status == 7 || item.status == 8 || item.status == 5){
+              todayIncom += item.factPrice;
+            }
           }
           that.setData({
             todayOrderNum: length,

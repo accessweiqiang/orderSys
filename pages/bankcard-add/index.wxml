@@ -4,7 +4,9 @@
     <view class="info">
       <view class="row-box">
         <view class="row-label">银行名称:</view>
-        <input type='text' placeholder='银行卡名称（必填）' name="bankName" value='{{bankName}}' />
+        <picker class='picker'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <input type='text' disabled='true' placeholder='银行卡名称' name="bankName" value='{{bankName}}' />
+         </picker>
       </view>
       <view class="row-box">
         <view class="row-label">卡号：</view>

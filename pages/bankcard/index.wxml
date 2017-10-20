@@ -2,7 +2,7 @@
   <view class='list'>
     <view class='item' wx:for="{{list}}" wx:key="unique" >
     <view class='image-warp'>
-      <image class='photo' src='/images/page/bankcard.png'></image></view>
+      <image class='photo' src='/images/icon/{{item.bankName}}.png'></image></view>
       <view class='info'>
         <view class='name'>{{item.bankName}}</view>
         <view class='type'>储蓄卡</view>

@@ -38,7 +38,7 @@ width: 175rpx;
   padding-left: 20rpx;
   font-weight: bold;
 }
-.info input,.info textarea,.info .picker{
+.row-box>input,.row-box>textarea,.row-box>.picker{
   width: 620rpx;
   display: block;
   line-height: 45rpx;

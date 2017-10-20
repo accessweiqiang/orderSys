@@ -20,6 +20,7 @@ App({
     var sessionId = that.globalData.sessionId;
     console.log("sessionId",sessionId)
     if (!sessionId) {
+      console.log("没有sessionId")
       wx.login({
         success: function (res) {
           wx.request({
@@ -82,8 +83,8 @@ App({
     })
   },
   globalData: {
-    sessionId: "",
     storeInfo: {},
+    sessionId: "",
     todayOrder:{},
     newOrder:{}
   }

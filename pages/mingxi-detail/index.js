@@ -1,66 +1,64 @@
 // pages/mingxi-detail/index.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: ["回锅肉", "小吃的", "小吃的", "小吃的", "小吃的", "小吃的", "小吃的"]
+    order:{}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  getOrder: function (id) {
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: "https://www.wendin.cn/dcb/wxorder.do?findByPro&sessionId=" + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      data: {
+        id
+      },
+      complete: function () {
+        wx.hideLoading();
+      },
+      success: function (res) {
+        var data = res.data;
+        if (!data.success) {
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel: false
+          })
+        } else {
+          var order = data.attributes.orders[0];
+          var orderDetailEntitys = order.orderDetailEntitys;
+          var detail =[];
+          for (var i = 0; i < orderDetailEntitys.length; i++) {
+            var item = orderDetailEntitys[i];
+            var t = item.goodsName + ":¥" + item.factPrice+  "x" + item.goodsNum;
+            detail.push(t)
+          }
+          detail = detail.join(",");
+          order.detail = detail;
+          that.setData({
+            order
+          })
+        }
+      }
+    })
+  },
   onLoad: function (options) {
-  
+    var id = options.id;
+    this.setData({
+      id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+    var id = this.data.id;
+    this.getOrder(id)
+  }  
 })

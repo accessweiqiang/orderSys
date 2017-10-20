@@ -45,11 +45,17 @@ Page({
   bindSave: function (e) {
     var that = this;
     var id = e.detail.value['bankcard.id'];
-    var validDate = e.detail.value.validDate;
     if (e.detail.value['bankcard.id'] == "" || e.detail.value['applyMoney'] == ""  ){
       wx.showModal({
         title: '提示',
         content: '所填信息不完整',
+      })
+      return;
+    }
+    if (e.detail.value['applyMoney'] > this.data.amountMoney){
+      wx.showModal({
+        title: '提示',
+        content: '超过可提现金额',
       })
       return;
     }
@@ -79,8 +85,8 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                wx.navigateBack({
-                  
+                wx.redirectTo({
+                  url: '/pages/caiwu/index'
                 })
               }
             }
@@ -89,11 +95,17 @@ Page({
       }
     })
   },
-  onLoad: function (option) {
-    
-
+  selectAll:function(){
+    var amountMoney = this.data.amountMoney;
+    this.setData({
+      applyMoney: amountMoney
+    })
   },
   onShow: function () {
     this.getList();
+    var amountMoney = app.globalData.storeInfo.amountMoney;
+    this.setData({
+      amountMoney: amountMoney
+    });
   }
 })

@@ -64,7 +64,6 @@ Page({
     })
   },
   onLoad: function (options) {
-  console.log(options)
   var id = options.id;
   this.getData(id)
   }

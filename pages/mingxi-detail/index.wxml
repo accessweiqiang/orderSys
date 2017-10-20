@@ -3,12 +3,12 @@
   <view class='t1'>
     <view class='money red'>
       <text class='yen'>¥</text>
-      105
+      {{order.factPrice}}
     </view>
-    <view class='date'>2017-08-09   19:16</view>
+    <view class='date'>{{order.createTime}}</view>
   </view>
   <view class='t2'>菜单详情</view>
   <view class='detail'>
-    <text class='item' wx:for="{{list}}" wx:key="unique">{{item}}</text>
+    {{order.detail}}
   </view>
 </view>

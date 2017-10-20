@@ -35,10 +35,10 @@ Page({
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      data:{/*
+      data:{
         timeStart,
-        timeEnd,*/
-        status:1
+        timeEnd,
+        status:5
       },
       complete: function () {
         wx.hideLoading();
