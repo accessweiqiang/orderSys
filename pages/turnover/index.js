@@ -1,88 +1,39 @@
-// pages/turnover/index.js
+var util = require("../../utils/util.js");
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    total:5000,
+    incom:"--",
     list:[
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money:200,
-        date:"2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      },
-      {
-        detail: "回锅肉,回锅肉,回锅肉,回锅肉,回锅肉,回锅肉",
-        money: 200,
-        date: "2017-09-10 18:45"
-      }
+      
     ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var orders = app.globalData.todayOrder;
+    var list = orders.filter(function(item){
+      var orderDetailEntitys = item.orderDetailEntitys;
+      var detail = orderDetailEntitys.map(function(d){
+        return d.goodsName + "x" + d.goodsNum;
+      });
+      detail = detail.join(",");
+      item.detail = detail;
+      return item;
+    });
+    list = list.filter((item) => { return item.status >= 5 && item.status!=6});
+    this.setData({
+      list
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  onLoad:function(options){
+    var incom = options.incom;
+    this.setData({
+      incom
+    })
   }
 })

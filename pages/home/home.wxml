@@ -3,7 +3,7 @@
 <view class="container">
   <view class='store'>
     <view id="store-info">
-      <image class="photo" src='/images/shangjia.png'></image>
+      <image class="photo" src='{{photo}}'></image>
       <view class='info'>
         <view class='name'>{{storeInfo.name}}</view>
         <view class='introduce'>{{storeInfo.restaurantIntroduce}}</view>
@@ -17,31 +17,31 @@
   </view>
   <view class='today-statistics full'>
     <navigator class='item' hover-class="navigator-hover" url='/pages/today-order/index'>
-      <view class='label'>{{todayInfo.order}}</view>
+      <view class='label'>{{todayOrderNum}}</view>
       <view>今日订单</view>
     </navigator>
-    <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index'>
-      <view class='label'>{{todayInfo.turnover}}元</view>
+    <navigator class='item' hover-class="navigator-hover" url='/pages/turnover/index?incom={{todayIncom}}'>
+      <view class='label'>{{todayIncom}}元</view>
       <view >今日营业额</view>
     </navigator>
   </view>
   <view style='height:20rpx;background:#e6e6e6;width:100%;'></view>
   <view class='manage-tab  full'>
     <navigator class='item' hover-class="navigator-hover" url='/pages/new-order/index'>
-      <image src='../../images/icon/latest-order.png'></image>
+      <image src='/images/icon/latest-order.png'></image>
       <view>最新订单</view>
     </navigator>
     <navigator class='item' hover-class="navigator-hover" url='/pages/shangpin/index'>
-      <image src='../../images/icon/commodity.png'></image>
+      <image src='/images/icon/commodity.png'></image>
       <view>商品管理</view>
     </navigator>
     <navigator class='item' hover-class="navigator-hover" url='/pages/caiwu/index'>
-      <image src='../../images/icon/financial.png'></image>
+      <image src='/images/icon/financial.png'></image>
       <view>财务信息</view>
     </navigator>
   </view>
-  <view id='show-image-wrap'>
-    <image src='/images/shangjia.png'></image>
+  <view id='show-image-wrap' wx:if="{{storeInfo.environments}}">
+    <image src='{{photo}}'></image>
   </view>
   <view class='notice'>
     <view class="notice_iteml">

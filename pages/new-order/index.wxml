@@ -1,16 +1,17 @@
 <view class="container">
-  <view class="no-order" hidden="{{orderList ? true : false}}">
+  <view class="no-order" wx:if="{{orderList.length==0 ? true : false}}">
     <view class="text">暂无订单</view>
   </view>
-  <view class="order-list" hidden="{{orderList ? false : true}}">
-    <view class="a-order" wx:for="{{orderList}}" wx:key="{{key}}">
-      <image class="photo" src="{{item.pic}}"></image>
+  <view class="order-list" wx:if="{{orderList.length>0 ? true : false}}">
+    <view class="a-order" wx:for="{{orderList}}" wx:key="unique">
       <view class='order-info'>
-        <view class='custom'>{{item.customer}}</view>
+        <view class='custom'>座位号：</view>
         <view class="order-date">
-          <view>{{item.dateAdd}}</view>
+          <view>日期：{{item.createTime}}</view>
         </view>
-        <view class="order-status" bindtap='orderDetail'>去处理</view>
+      </view>
+      <view class='btn-wrap'>
+        <view class="order-status" bindtap='orderDetail' data-id="{{item.id}}">去处理</view>
       </view>
     </view>
   </view>

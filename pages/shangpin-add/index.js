@@ -79,7 +79,7 @@ Page({
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://www.wendin.cn/dcb/wxfile.do?deal&actionType=1' + '&sessionId=' + app.globalData.sessionId, //仅为示例，非真实的接口地址
+          url: 'https://www.wendin.cn/dcb/wxfile.do?deal&actionType=1' + '&sessionId=' + app.globalData.sessionId, 
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {

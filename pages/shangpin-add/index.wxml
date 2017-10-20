@@ -33,6 +33,17 @@
           <input type='text' class="none" name="menubarId" value="{{category.id}}" />
         </picker>
       </view>
+      <view class="row-box">
+        <view class="row-label">分类：</view>
+         <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              当前选择：
+            </view>
+       
+            
+          </picker>
+      </view>
+     
       <view class="row-box  intro-box">
         <view class="row-label">介绍：</view>
         <textarea auto-height placeholder='介绍' class='intro' name="detail" value='{{detail}}'></textarea>

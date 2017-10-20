@@ -2,10 +2,10 @@
   <view class='photo-wrap'>
     <view class='photo' style='background-image:url(https://www.wendin.cn/public/images/page/banner.png)'></view>
     <view class='title'>可提现（人民币/元）</view>
-    <view class='withdraw'>¥{{withdraw}}</view>
+    <view class='withdraw'>¥{{amountMoney}}</view>
     <view class='total'>
         <view class='total-value'>
-          总收入：<text class='yen'>¥</text> {{total}}
+          总收入：<text class='yen'>¥</text> {{allMoney}}
         </view>
         <view class='mask'></view>
     </view>
@@ -19,7 +19,7 @@
           <text>线上支付</text>
         </view>
         <view class='text red'>
-          <text class='yen'>¥</text> {{onlinePay}}
+          <text class='yen'>¥</text> {{allMoney}}
         </view>
     </view>
     <view class='item c2'>
@@ -27,7 +27,7 @@
           <text>现金支付</text>
         </view>
         <view class='text red'>
-          <text class='yen'>¥</text> {{offlinePay}}
+          <text class='yen'>¥</text> 0
         </view>
     </view>
     <view class='item c3'>

@@ -1,4 +1,15 @@
 var app = getApp()
+var util = require("../../utils/util.js");
+/*
+首先下单（未处理），   1
+支付时（支付中），3
+支付 完（支付成功，待处理），5
+支付失败（支付失败），6
+商家看到订单（处理中），7
+商品上桌，（处理完成），8
+1 ，3 ，5 ，6 的状态系统自动维护，前台
+要维护的状态为7 ，8
+*/
 Page({
   data: {
     orderList: null
@@ -9,37 +20,25 @@ Page({
       url: "/pages/order-detail/index?id=" + orderId
     })
   },
-  add:function(){
-    var order = {
-      "factPrice": 20,
-      "price": 20,
-      "restaurantNo": "shop-1",//app.globalData.storeInfo.no,
-      "orderDetailEntitys": [{ "restaurantNo": "shop-1", "price": 10, "menubarId": "2c92d59e5f0f0ec9015f23f0c9f90019", "goodsName": "酸辣粉", "goodsPictures": "/20171016/tmp_2015555412o6zAJs60NkKjtJxyJMO7AucG3eNk43d5210ebad3d577b2c6c92bd20db96d.png", "detail": "好吃的酸酸的", "standard": "碗", "factPrice": 8, "goodsId": "2c92d59e5f0f0ec9015f247d6f3f002e", "goodsNum": 2 }]
-    }
-    // return;
-    wx.request({
-      url: "https://www.wendin.cn/dcb/wxorder.do?doAdd&sessionId=" + app.globalData.sessionId,
-      method: 'POST',
-      header: {
-        //'content-type': "application/x-www-form-urlencoded"
-        'content-type': "application/json"
-      },
-      data: order,
-      success: function (res) {
-        console.log(res)
-      }
 
-    })
-  },
   getList: function () {
+    var that = this;
     wx.showLoading({
       title: '加载中',
     })
+    var date = new Date();
+    var timeStart = util.formatDate(date)+" :00:00:00";
+    var timeEnd = util.formatDate(date) + " :23:59:59";
     wx.request({
       url: "https://www.wendin.cn/dcb/wxorder.do?findByPro&sessionId=" + app.globalData.sessionId,
       method: 'POST',
       header: {
         'content-type': "application/x-www-form-urlencoded"
+      },
+      data:{
+        timeStart,
+        timeEnd,
+        status:5
       },
       complete: function () {
         wx.hideLoading();
@@ -54,7 +53,9 @@ Page({
             showCancel: false
           })
         } else {
-
+          that.setData({
+            orderList:data.attributes.orders
+          })
         }
       }
     })
@@ -62,7 +63,5 @@ Page({
   onShow: function () {
     // 获取订单列表
     this.getList();
-    
-
   }
 })

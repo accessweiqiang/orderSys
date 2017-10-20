@@ -1,16 +1,16 @@
 <!--pages/turnover/index.wxml-->
 <view class='container'>
   <view class='total'>
-    <text class='yen'>¥</text> {{total}}
+    <text class='yen'>¥</text> {{incom}}
   </view>
   <view class='list'>
     <view class='title'>收入明细</view>
-    <navigator open-type='navigate' url='/pages/mingxi-detail/index' class='item' wx:for="{{list}}" wx:key="unique">
+    <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{item.id}}' class='item' wx:for="{{list}}" wx:key="unique">
       <view class='info'>
         <view class='detail'>{{item.detail}}</view>
-        <view class='money red'><text class='yen'>¥</text>{{item.money}}</view>
+        <view class='money red'><text class='yen'>¥</text>{{item.factPrice}}</view>
       </view>
-      <view class='date'>{{item.date}}</view>
+      <view class='date'>{{item.createTime}}</view>
     </navigator>
   </view>
 </view>

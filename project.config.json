@@ -53,7 +53,13 @@
 				{
 					"id": 6,
 					"name": "原页面",
-					"pathName": "pages/caiwu-tixian/index",
+					"pathName": "pages/mingxi/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "菜单",
+					"pathName": "pages/caidan/index",
 					"query": ""
 				},
 				{

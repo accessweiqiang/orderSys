@@ -1,36 +1,30 @@
 <view class="container">
       <view class="order-info">
           <view class="row-box">
-              <view class="row-label">黄先生</view>
-              <view class="right-text">18628977163</view>
+              <view class="row-label">座位号</view>
+              <view class="right-text">1号</view>
           </view>
-          <view class="row-box">
-              <view class="row-label">烤鱼</view>
-              <view class="row-label">x  1</view>
-              <view class="right-text red"><text class='yen'>¥</text> 100</view>
+          <view class="row-box" wx:for="{{detail}}" wx:key="unique">
+              <view class="row-label">{{item.goodsName}}</view>
+              <view class="row-label">x  {{item.goodsNum}}</view>
+              <view class="right-text red"><text class='yen'>¥</text> {{item.factPrice}}</view>
           </view>
-           <view class="row-box">
-              <view class="row-label">其他</view>
-              <view class="row-label">x  1</view>
-              <view class="right-text red"><text class='yen'>¥</text> 60</view>
-          </view>
-         
           <view class="row-box">
               <view class="row-label">合计</view>
               <view class="row-label red">
               <text class='yen'>¥</text>
-              900</view>
+              {{order.factPrice}}</view>
               <view class="right-text">
-                <text class='status'>已支付</text>
+                <text class='status'>{{status}}</text>
               </view>
           </view>
-          <view class="row-box" style='color:#666666;font-size:24rpx;'>
-              <text>订单号：5454545427</text>
-              <text>日期：5454545427</text>
+          <view class="row-box2 clearfix" style='color:#666666;font-size:24rpx;' >
+              <view class='t1' >订单号：{{order.id}}</view>
+              <view class='t2' >日期：{{order.createTime}}</view>
           </view>
       </view>
       <view class='remark'>
-        <view><text class='red'>备注：</text><text>阿什顿发垃圾毒素；阿萨德</text></view>
+        <view><text class='red'>备注：</text><text></text></view>
       </view>
       <view class='oprate'>
         <view class='btn'>无效</view>
