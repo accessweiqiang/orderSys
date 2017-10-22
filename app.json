@@ -51,8 +51,8 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/tab/home-page-on.png",
-        "selectedIconPath": "images/tab/home-page-off.png",
+        "iconPath": "images/tab/home-page-off.png",
+        "selectedIconPath": "images/tab/home-page-on.png",
         "text": "首页"
       },
       {

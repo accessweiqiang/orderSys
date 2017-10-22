@@ -23,7 +23,7 @@
   </view>
   <view class="order-list">
     <navigator open-type='navigate' url='/pages/mingxi-detail/index?id={{item.id}}' class="a-order" wx:for="{{orderList}}" wx:key="unique">
-      <image class="photo" src="/images/icon/order.png" ></image>
+      <image class="photo" src="https://www.wendin.cn/public/images/icon/order.png" ></image>
       <view class='order-info'>
         <view class='custom'>客户：{{item.customer}}</view>
         <view class='order-no'>{{item.id}}</view>

@@ -24,8 +24,11 @@ Page({
         'content-type': "application/x-www-form-urlencoded"
       },
       success: function (res) {
-        console.log(res)
         var data = res.data;
+        var list = data.obj.map(function(item){
+          item.bankicon = util.getBankcardIcon(item.bankName);
+          return item
+        });
         if (!data.success) {
           wx.hideLoading();
           wx.showModal({
@@ -35,7 +38,7 @@ Page({
           })
         } else {
           that.setData({
-            list: data.obj
+            list: list
           })
         }
       }

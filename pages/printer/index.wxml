@@ -1,6 +1,6 @@
 <view class="container">
   <view class='main'>
-    <image class='photo' src='/images/icon/default.png'></image>
+    <image class='photo' src='https://www.wendin.cn/public/images/icon/default.png'></image>
     <view class='no-data' wx:if="{{!list.length>0}}">您当前还没有关联任何打印机</view>
     <view class='list'>
       <view class='item' wx:for="{{list}}" wx:key="unique">

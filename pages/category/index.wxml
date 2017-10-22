@@ -12,10 +12,10 @@
           <view class='name'>{{item.name}}</view>
           <view class='number text-right'>共两件2件商品</view>
         </view>
-        <view class='children'>
+       <!-- <view class='children'>
           <view>花生</view>
           <view>花生</view>
-        </view>
+        </view>-->
       </view>
     </view>
   </view>
