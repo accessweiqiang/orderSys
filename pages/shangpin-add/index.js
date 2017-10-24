@@ -126,7 +126,7 @@ Page({
     var standard = e.detail.value.standard;
     var detail = e.detail.value.detail;
     var menubarId = e.detail.value.menubarId;
-    var price = e.detail.value.price*1000;
+    var price = e.detail.value.price*100;
     var discount = e.detail.value.discount;
     console.log(e.detail.value)
     if (url == '' || goodsName == "" || standard == "" || detail == "" || menubarId == "" || price == "" || discount == "") {
