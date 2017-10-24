@@ -7,7 +7,7 @@
   <scroll-view class="list" wx:if="{{list.length>0}}" scroll-y="true">
     <view class="item" wx:for="{{list}}" wx:key="{{unique}}" data-id='{{item.id}}' data-menubarId="{{item.menubarId}}" wx:if="{{currentCategory?item.menubarId==currentCategoryId:true}}">
       <image wx:if="{{item.goodsPictures}}" class="photo" src="https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath={{item.goodsPictures}}&sessionId={{sessionId}}"></image>
-      <image wx:if="{{!item.goodsPictures}}" class="photo" src="/images/icon/default.png"></image>      
+      <image wx:if="{{!item.goodsPictures}}" class="photo" src="https://www.wendin.cn/public/images/icon/default.png"></image>      
       <view class='item-info'>
         <view class='name'>{{item.goodsName}}</view>
         <view class='price'>单价:

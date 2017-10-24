@@ -1,1 +1,16 @@
-
+<view style="width:100%">
+<button bindtap='qr'>二维码</button>
+<button bindtap='lanya'>测试蓝牙</button>
+<view>openBluetoothAdapter:{{openBluetoothAdapter}}</view>
+<view>getBluetoothAdapterState:{{openBluetoothAdapter}}</view>
+<view>startBluetoothDevicesDiscovery:{{startBluetoothDevicesDiscovery}}</view>
+<view>onBluetoothDeviceFound:{{onBluetoothDeviceFound}}</view>
+</view>
+<view>
+<button bindtap='getBluetoothDevices'>获取已经连接的</button>
+<view>已经连接的getBluetoothDevices：{{getBluetoothDevices}}</view>
+</view>
+<view>
+<button bindtap='getBLEDeviceServices'>getBLEDeviceServices</button>
+getBLEDeviceServices:{{getBLEDeviceServices}}
+</view>

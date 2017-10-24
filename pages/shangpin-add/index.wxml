@@ -1,6 +1,6 @@
 <view class="container">
   <form bindsubmit="bindSave">
-    <view class='banner' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'>
+    <view class='banner' style='background-image:url({{photo?photo:"https://www.wendin.cn/public/images/icon/default.png"}})'>
       <view bindtap='uploadImage'>
         <image src='https://www.wendin.cn/public/images/icon//UpIoad-pictures@2x.png'></image>
         <input class='none' type='text' name="goodsPictures" value='{{filePath}}' />

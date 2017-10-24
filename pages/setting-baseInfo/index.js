@@ -109,10 +109,9 @@ Page({
       storeInfo: option
     });
     var environments = option.environments;
-    var photo = "/images/page/store-img.png";
+    var photo = "https://www.wendin.cn/public/images/page/store-img.png";
     if (environments) {
       photo = 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + environments + '&sessionId=' + app.globalData.sessionId;
-
       this.setData({
         photo
       });

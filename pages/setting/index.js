@@ -16,7 +16,7 @@ Page({
 
   },
   viewPhoto: function (e) {
-    var src = e.currentTarget.dataset.src || "/images/icon/default.png";
+    var src = e.currentTarget.dataset.src || "https://www.wendin.cn/public/images/icon/default.png";
     wx.previewImage({
       current: src, // 当前显示图片的http链接
       urls: [src] // 需要预览的图片http链接列表
@@ -40,7 +40,7 @@ Page({
       success: function (res) {
         var data = res.data.attributes;
         var environments = data.environments;
-        var photo = "/images/page/store-img.png";
+        var photo = "https://www.wendin.cn/public/images/page/store-img.png";
         if (environments) {
           photo = 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + environments + '&sessionId=' + app.globalData.sessionId
         }
