@@ -36,6 +36,11 @@ Page({
                 "environments": filePath,
                 photo: 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + filePath + '&sessionId=' + app.globalData.sessionId
               })
+            }else{
+              wx.showModal({
+                title: '提示',
+                content: '上传文件失败',
+              })
             }
             //do something
           }, fail: function (res) {

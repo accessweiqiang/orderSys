@@ -51,9 +51,31 @@ function getOrderStatus(status){
   return s[status];
 }
 
+
+
+function getBankcardIcon ( name ){
+  var bankCardIocons = {
+    "中国银行": "bank1.png",
+    "农业银行": "bank2.png",
+    "工商银行": "bank3.png",
+    "建设银行": "bank4.png",
+    "交通银行": "bank5.png",
+    "招商银行": "bank6.png",
+    "贵阳银行": "bank7.png"
+  }
+  var basePath = "https://www.wendin.cn/public/images/icon/";
+  var icon = bankCardIocons[name];
+  console.log(icon)
+  if(!icon){
+    icon="bank.png"
+  }
+  return basePath+icon
+};
+
 module.exports = {
   formatTime: formatTime,
   obj2query: obj2query,
   formatDate,
-  getOrderStatus
+  getOrderStatus,
+  getBankcardIcon
 }

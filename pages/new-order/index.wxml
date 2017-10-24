@@ -1,6 +1,6 @@
 <view class="container">
   <view class="no-order" wx:if="{{orderList.length==0 ? true : false}}">
-    <view class="text">暂无订单</view>
+    暂无订单
   </view>
   <view class="order-list" wx:if="{{orderList.length>0 ? true : false}}">
     <view class="a-order" wx:for="{{orderList}}" wx:key="unique">

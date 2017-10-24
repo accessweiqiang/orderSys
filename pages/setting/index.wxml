@@ -15,7 +15,7 @@
             <text class='bold'>店铺环境</text>
           </label>
           <view class='image-wrap'>
-            <image class='photo' src='{{photo?photo:"/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{photo}}'></image>
+            <image class='photo' src='{{photo?photo:"https://www.wendin.cn/public/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{photo}}'></image>
           </view>
         </view>
         <view class='title'>
@@ -69,7 +69,7 @@
             <text class='bold'>特殊行业认证</text>
           </label>
           <view class='image-wrap'>
-            <image class='photo' src='{{hangye?hangye:"/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{hangye}}'></image>
+            <image class='photo' src='{{hangye?hangye:"https://www.wendin.cn/public/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{hangye}}'></image>
           </view>
         </view>
         <view class='title'>
@@ -78,7 +78,7 @@
             <text class='bold'>营业执照</text>
           </label>
           <view class='image-wrap'>
-            <image class='photo' src='{{zhizhao?zhizhao:"/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{zhizhao}}'></image>
+            <image class='photo' src='{{zhizhao?zhizhao:"https://www.wendin.cn/public/images/icon/default.png"}}' bindtap="viewPhoto" data-src='{{zhizhao}}'></image>
           </view>
         </view>
       </view>

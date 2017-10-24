@@ -1,5 +1,5 @@
 <view class="container">
-  <view class='photo' bindtap='updatePhoto' style='background-image:url({{photo?photo:"/images/icon/default.png"}})'></view>
+  <view class='photo' bindtap='updatePhoto' style='background-image:url({{photo?photo:"https://www.wendin.cn/public/images/icon/default.png"}})'></view>
   <view class='line-gray'></view>
   <form bindsubmit="bindSave">
   <input name="environments" class="none" type="text" value="{{         environments}}" />

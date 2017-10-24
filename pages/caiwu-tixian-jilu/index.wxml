@@ -1,0 +1,16 @@
+<view class="container">
+  <view wx:if="{{list.length==0}}" class='no-data'>暂无提现记录</view>
+  <view class='list' scroll-y="ture">
+    <view class='item' wx:for="{{list}}" wx:key="unique">
+      <view class='ch1'>
+        <view class='name'>{{item['bankcard.bankName']}}（{{item['bankcard.cardNo']}}）</view>
+        <view>{{item.statusText}}</view>
+        <view class='date' wx:if="{{!item.dealDate}}">申请日期：{{item.applyDate}}</view>
+        <view class='date'  wx:if="{{item.dealDate}}">处理日期：{{item.dealDate}}</view>
+        
+      </view>
+    <view class='ch2 red'>¥{{item.applyMoney}}</view>      
+    </view>
+  </view>
+  <navigator class='back' url='/pages/caiwu/index'>返回</navigator>
+</view>

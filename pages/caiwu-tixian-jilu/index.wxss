@@ -1,0 +1,38 @@
+.list{
+ min-height: 600rpx;
+  padding-bottom: 100rpx;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  height: 150rpx;
+  border-bottom: 1px #f1f1f1 solid;
+}
+.ch1{
+  width: 600rpx;
+  text-indent: 20rpx;
+}
+.name{
+  font-size: 32rpx;
+  margin: 10rpx 0;
+}
+.date{
+  color: gray;
+  margin-top: 10rpx;
+}  
+
+.ch2{
+  width: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+}
+.back{
+  position: fixed;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: #e32910;
+  bottom: 0;
+}

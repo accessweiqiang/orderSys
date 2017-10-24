@@ -33,7 +33,8 @@
     "pages/setting-regist/index",
     "pages/printer-add/index",
     "pages/bankcard/index",
-    "pages/bankcard-add/index"
+    "pages/bankcard-add/index",
+    "pages/caiwu-tixian-jilu/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,20 +51,20 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "iconPath": "images/tab/home-page-on.png",
+        "iconPath": "images/tab/home-page-off.png",
         "selectedIconPath": "images/tab/home-page-on.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/caidan/index",
         "iconPath": "images/tab/menu-off.png",
-        "selectedIconPath": "images/tab/menu-off.png",
+        "selectedIconPath": "images/tab/menu-on.png",
         "text": "菜单"
       },
       {
         "pagePath": "pages/setting/index",
         "iconPath": "images/tab/setting-off.png",
-        "selectedIconPath": "images/tab/setting-off.png",
+        "selectedIconPath": "images/tab/setting-on.png",
         "text": "设置"
       }
     ]

@@ -8,7 +8,14 @@ Page({
     cardHolder: "",
     holderMobile: "",
     holderIdCard: "",
-    validDate: ""
+    validDate: "",
+
+  },
+  bindPickerChange: function (e) {
+    var index = e.detail.value;
+    this.setData({
+      bankName:this.data.array[ index]
+    })
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -80,8 +87,19 @@ Page({
       });
       this.setData({
         ...option
-      })
+      });
     }
+    this.setData({
+      array:[
+        "中国银行",
+        "农业银行",
+        "工商银行",
+        "建设银行",
+        "交通银行",
+        "贵阳银行",
+        "招商银行",
+      ]
+    })
 
   },
   onShow: function () {

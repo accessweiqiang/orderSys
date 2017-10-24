@@ -33,11 +33,10 @@ Page({
               }
               wx.showToast({ title: "上传图片成功" });
               that.setData({
-                "environments": filePath,
+                "storeInfo.environments": filePath,
                 photo: 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + filePath + '&sessionId=' + app.globalData.sessionId
               })
             }
-            //do something
           }, fail: function (res) {
             console.log(res)
           }
@@ -72,7 +71,7 @@ Page({
     console.log(e.detail.value  )
     var params = e.detail.value;
     wx.request({
-      url: 'https://www.wendin.cn/dcb/wxrestaurant.do?save&no='+app.globalData.storeInfo.no+'&sessionId=' + app.globalData.sessionId,
+      url: 'https://www.wendin.cn/dcb/wxrestaurant.do?save'+'&sessionId=' + app.globalData.sessionId,
       data: params,
       method: 'POST',
       header: {
@@ -109,10 +108,13 @@ Page({
     this.setData({
       storeInfo: option
     });
-    this.setData({
-      environments: option.environments
-    });
-    
+    var environments = option.environments;
+    var photo = "https://www.wendin.cn/public/images/page/store-img.png";
+    if (environments) {
+      photo = 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + environments + '&sessionId=' + app.globalData.sessionId;
+      this.setData({
+        photo
+      });
+    }
   }
-  
 })

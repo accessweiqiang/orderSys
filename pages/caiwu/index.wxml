@@ -1,44 +1,42 @@
 <view class='container'>
   <view class='photo-wrap'>
-    <view class='photo' style='background-image:url(https://www.wendin.cn/public/images/page/banner.png)'></view>
+    <view class='photo' style='background-image:url(https://www.wendin.cn/public/images/page/background.png)'></view>
     <view class='title'>可提现（人民币/元）</view>
     <view class='withdraw'>¥{{amountMoney}}</view>
     <view class='total'>
-        <view class='total-value'>
-          总收入：<text class='yen'>¥</text> {{allMoney}}
-        </view>
-        <view class='mask'></view>
+      <view class='total-value'>
+        总收入：
+        <text class='yen'>¥</text> {{allMoney}}
+      </view>
+      <view class='mask'></view>
     </view>
     <view class='mask'></view>
 
   </view>
   <view class='info'>
     <view class='item c1'>
-        <view class='label'>
-          <view class='image c1'></view>
-          <text>线上支付</text>
-        </view>
-        <view class='text red'>
-          <text class='yen'>¥</text> {{allMoney}}
-        </view>
+      <view class='label'>
+        <view class='image c1'></view>
+        <text>线上支付</text>
+      </view>
+      <view class='text red'>
+        <text class='yen'>¥</text> {{allMoney}}
+      </view>
     </view>
     <view class='item c2'>
-        <view class='label'>
-          <text>现金支付</text>
-        </view>
-        <view class='text red'>
-          <text class='yen'>¥</text> 0
-        </view>
+      <navigator open-type='navigate' url='/pages/caiwu-tixian-jilu/index' class='label' style='width:100%'>
+        <text>提现记录</text>
+      </navigator>
     </view>
     <view class='item c3'>
-        <navigator open-type='navigate' url='/pages/mingxi/index' class='label' style='width:100%'>
-          <text>收支明细</text>
-        </navigator>
+      <navigator open-type='navigate' url='/pages/mingxi/index' class='label' style='width:100%'>
+        <text>收支明细</text>
+      </navigator>
     </view>
     <view class='item c4'>
-        <navigator open-type='navigate' url='/pages/bankcard/index' class='label' style='width:100%'>
-          <text>银行卡</text>
-        </navigator>
+      <navigator open-type='navigate' url='/pages/bankcard/index' class='label' style='width:100%'>
+        <text>银行卡</text>
+      </navigator>
     </view>
   </view>
   <view class='btn-wrap'>
