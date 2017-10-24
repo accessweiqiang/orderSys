@@ -12,7 +12,7 @@
           <view style='font-size:22rpx;'>(店主)</view>
         </view>
       </view>
-      <image class="qr" src='https://www.wendin.cn/public/images/icon/qr.png'></image>
+      <image class="qr" bindtap='showModal' src='https://www.wendin.cn/public/images/icon/qr.png'></image>
     </view>
   </view>
   <view class='today-statistics full'>
@@ -51,5 +51,13 @@
     <view class='notice_swiper'>
     客官接单了...
     </view>
+  </view>
+</view>
+<view class='modal' wx:if='{{modalShow}}'>
+  <view class='mask'></view>
+  <view class='modal-content'>
+        <view class='hide-modal' bindtap='hideModal'>×</view>
+      <image id='qrBase64' src='{{qrBase64}}' wx:if="{{qrBase64}}"></image>     
+      <view class='tip'>扫码点餐</view>
   </view>
 </view>

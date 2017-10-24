@@ -211,3 +211,26 @@ swiper-item image {
   height: 0;
   color: transparent;
 }
+.modal{
+  width: 600rpx;
+}
+#qrBase64{
+  width: 100%;
+}
+.modal .tip{
+  line-height: 40rpx;
+  text-align: center;
+  display: block;
+  margin-bottom: 20rpx;
+}
+.modal .hide-modal{
+  position: absolute;
+  font-size: 80rpx;
+  right: 0;
+  top: -90rpx;
+  color: #fff;
+}
+.modal .modal-content{
+
+ overflow:visible;
+}

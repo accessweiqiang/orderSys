@@ -8,154 +8,16 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
-	"appid": "wx9e7bce5d561bb265",
+	"appid": "wxf2e09e7811202654",
 	"projectname": "%E7%82%B9%E9%A4%90%E5%AE%9D",
 	"condition": {
 		"weapp": {
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "今日订单",
-					"pathName": "pages/today-order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "最新订单",
-					"pathName": "pages/new-order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "收支明细",
-					"pathName": "pages/mingxi/index",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "订单详情",
-					"pathName": "pages/order-detail/index",
-					"query": "id=2c92d59e5f2fe34e015f300f3c920002"
-				},
-				{
-					"id": 6,
-					"name": "商品分类",
-					"pathName": "pages/category/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "今日营业额",
-					"pathName": "pages/turnover/index",
-					"query": ""
-				},
-				{
-					"id": 6,
+					"id": 0,
 					"name": "原页面",
-					"pathName": "pages/bankcard-add/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "菜单",
-					"pathName": "pages/caidan/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "明细详情",
-					"pathName": "pages/mingxi-detail/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "营业额",
-					"pathName": "pages/turnover/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "菜单详情",
-					"pathName": "pages/caidan-detail/index",
-					"query": ""
-				},
-				{
-					"id": 11,
-					"name": "财务信息",
-					"pathName": "pages/caiwu/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "设置",
-					"pathName": "pages/setting/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "打印机管理",
-					"pathName": "pages/printer/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "设置-基本信息",
-					"pathName": "pages/setting-baseInfo/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "打印机-add",
-					"pathName": "pages/printer-add/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "今日订单",
-					"pathName": "pages/today-order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "最新订单",
-					"pathName": "pages/new-order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "收支明细",
-					"pathName": "pages/mingxi/index",
-					"query": ""
-				},
-				{
-					"id": 4,
-					"name": "订单列表",
-					"pathName": "pages/order-list/index",
-					"query": ""
-				},
-				{
-					"id": 5,
-					"name": "订单详情",
-					"pathName": "pages/order-detail/index",
-					"query": "id=2222"
-				},
-				{
-					"id": 6,
-					"name": "商品分类",
-					"pathName": "pages/category/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "商品管理",
-					"pathName": "pages/shangpin/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "商品管理-add",
-					"pathName": "pages/shangpin-add/index",
+					"pathName": "pages/home/home",
 					"query": ""
 				}
 			]

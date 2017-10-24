@@ -2,14 +2,36 @@
 //获取应用实例
 var app = getApp();
 var util = require("../../utils/util.js");
+var {qrcode}= require("../../utils/qrcode.js");
 Page({
   data: {
     storeInfo: {
     },
     todayOrderNum:"",
     todayIncom:"",
+    qrBase64:"",
+    modalShow:false
   },
-  //https://www.wendin.cn/dcb/wxrestaurant.do?getMyRestaurant&sessionId=8874429239226273254
+  hideModal:function(){
+    this.setData({
+      modalShow: false
+    })
+  },
+  showModal: function () {
+    this.setData({
+      modalShow: true
+    })
+  },
+  qrGenerate:function(){
+    var shopNum =  app.globalData.storeInfo.no;
+    var qr = new qrcode(10, "L");
+    qr.addData(shopNum);
+    qr.make();
+    var qrBase64 = qr.createImgBase64();
+    this.setData({
+      qrBase64
+    });
+  },
   //获取餐馆信息
   getMyRestaurant:function(){
     var that = this;
@@ -92,6 +114,7 @@ Page({
     })
   },
   onShow: function () {
+    this.qrGenerate();
     this.getMyRestaurant();
     this.getTodayOrder();
   },

@@ -165,7 +165,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    //app.login();
+    app.login();
   },
 
   /**
