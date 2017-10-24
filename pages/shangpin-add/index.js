@@ -25,12 +25,29 @@ Page({
         wx.hideLoading()
       },
       success: function (res) {
-        console.log("分类列表", res);
         var data = res.data
         if (data.success) {
           var categoryId = that.data.category.id;
           var categoryList = data.attributes.menus;
-          //如果有categoryId说明是编辑
+          if (categoryList.length==0){
+            wx.showModal({
+              title: '温馨提示',
+              content: '您还没有添加商品分类，请添加！',
+              showCancel:false,
+              success: function (res) {
+                if (res.confirm) {
+                  wx.navigateTo({
+                    url: 'pages/category/index'
+                  })
+                } else if (res.cancel) {
+                  wx.navigateTo({
+                    url: 'pages/category/index'
+                  })
+                }
+              }
+            })
+          }
+          //如果有categoryId说明是编辑，选择好picker
           if (categoryId) {
             for (var i = 0; i < categoryList.length; i++) {
               if (categoryId == categoryList[i].id) {
@@ -60,8 +77,6 @@ Page({
   },
   bindPickerChange: function (e) {
     var index = e.detail.value;
-    console.log(index);
-    console.log(this.data.categoryList[index]);
     this.setData({
       category: this.data.categoryList[index]
     })
@@ -96,8 +111,6 @@ Page({
                 photo: 'https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath=' + filePath + '&sessionId=' + app.globalData.sessionId
               })
             }
-
-            //do something
           }, fail: function (res) {
             console.log(res)
           }

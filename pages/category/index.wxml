@@ -10,12 +10,8 @@
       <view class='item {{index==currentIndex?"active":""}}' wx:for="{{list}}" wx:key="unique" bindtap='select' data-index="{{index}}" data-id="{{item.id}}">
         <view class='top-ch'>
           <view class='name'>{{item.name}}</view>
-          <view class='number text-right'>共两件2件商品</view>
+          <view class='number red text-right' bindtap='showDelete' data-id="{{item.id}}" data-name="{{item.name}}">删除</view>
         </view>
-       <!-- <view class='children'>
-          <view>花生</view>
-          <view>花生</view>
-        </view>-->
       </view>
     </view>
   </view>

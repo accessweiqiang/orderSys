@@ -56,8 +56,9 @@
   position: absolute;
   right: 10rpx;
   top: 30rpx;
-  background: url(https://www.wendin.cn/public/images/page/arrow.png) no-repeat;
+ /* background: url(https://www.wendin.cn/public/images/page/arrow.png) no-repeat;
   background-size: contain;
+  */
 }
 .item.active  .number::after {
   transform: rotateZ(90deg) translateX(4rpx);

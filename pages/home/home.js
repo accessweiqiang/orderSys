@@ -22,8 +22,7 @@ Page({
       modalShow: true
     })
   },
-  qrGenerate:function(){
-    var shopNum =  app.globalData.storeInfo.no;
+  qrGenerate: function (shopNum ){
     var qr = new qrcode(10, "L");
     qr.addData(shopNum);
     qr.make();
@@ -43,7 +42,6 @@ Page({
         'content-type':"application/x-www-form-urlencoded"
       },
       success:function(res){
-        console.log(res);
         var data = res.data.attributes;
         var environments = data.environments;
         var photo = "https://www.wendin.cn/public/images/page/store-img.png";
@@ -55,6 +53,7 @@ Page({
           photo
         });
         app.globalData.storeInfo=data;
+        that.qrGenerate(data.no);        
       }
     })
   },
@@ -80,7 +79,6 @@ Page({
         wx.hideLoading();
       },
       success: function (res) {
-        console.log(res)
         var data = res.data;
         if (!data.success) {
           wx.showModal({
@@ -114,7 +112,6 @@ Page({
     })
   },
   onShow: function () {
-    this.qrGenerate();
     this.getMyRestaurant();
     this.getTodayOrder();
   },

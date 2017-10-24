@@ -6,11 +6,61 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
-    currentIndex:null,
-    modalShow:false
+    list: [],
+    currentIndex: null,
+    modalShow: false
   },
-
+  doDelete: function (id) {
+    var that = this;
+    wx.showLoading({
+      title: '删除中',
+    })
+    wx.request({
+      url: 'https://www.wendin.cn/dcb/wxmenubar.do?doDel&' + '&sessionId=' + app.globalData.sessionId,
+      data: { id },
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      complete: function () {
+        wx.hideLoading();
+      },
+      success: function (res) {
+        if (!res.data.success) {
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                that.getList();
+              }
+            }
+          })
+        }
+      }
+    })
+  },
+  showDelete: function (e) {
+    var that = this;
+    var id = e.currentTarget.dataset.id;
+    var name = e.currentTarget.dataset.name;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除分类：' + name + "?",
+      success: function (res) {
+        if (res.confirm) {
+          that.doDelete(id)
+        }
+      }
+    })
+  },
   bindSave: function (e) {
     var that = this;
     var name = e.detail.value.name;
@@ -24,13 +74,13 @@ Page({
     var params = e.detail.value;
     wx.showLoading();
     wx.request({
-      url: 'https://www.wendin.cn/dcb/wxmenubar.do?doAdd&'+'&sessionId=' + app.globalData.sessionId,
+      url: 'https://www.wendin.cn/dcb/wxmenubar.do?doAdd&' + '&sessionId=' + app.globalData.sessionId,
       data: params,
       method: 'POST',
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      complete:function(){
+      complete: function () {
         wx.hideLoading();
       },
       success: function (res) {
@@ -48,7 +98,7 @@ Page({
             success: function (res) {
               if (res.confirm) {
                 that.hideModal();
-                that.getList();                          
+                that.getList();
               }
             }
           })
@@ -56,9 +106,9 @@ Page({
       }
     })
   },
-  showModal:function(){
+  showModal: function () {
     this.setData({
-      modalShow:true
+      modalShow: true
     })
   },
   hideModal: function () {
@@ -66,14 +116,14 @@ Page({
       modalShow: false
     })
   },
-  select:function(e){
+  select: function (e) {
     var index = e.currentTarget.dataset.index;
     this.setData({
-      currentIndex:index
+      currentIndex: index
     });
-  
+
   },
-  getList:function(){
+  getList: function () {
     var that = this;
     wx.showLoading({
       title: '加载中',
@@ -84,22 +134,22 @@ Page({
       header: {
         'content-type': "application/x-www-form-urlencoded"
       },
-      complete:function(){
+      complete: function () {
         wx.hideLoading()
       },
       success: function (res) {
-        console.log("分类列表",res);
+        console.log("分类列表", res);
         var data = res.data
-        if(data.success){
+        if (data.success) {
           that.setData({
             list: data.attributes.menus
           })
-        }else{
+        } else {
           wx.showModal({
             title: '提示',
             content: data.msg,
-            showCancel:false,
-            
+            showCancel: false,
+
           })
         }
       }
@@ -117,34 +167,34 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

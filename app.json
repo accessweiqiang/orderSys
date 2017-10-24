@@ -2,18 +2,8 @@
   "pages": [
     "pages/setupApp/index",
     "pages/home/home",
-    "pages/index/index",
-    "pages/goods-details/index",
-    "pages/shop-cart/index",
-    "pages/to-pay-order/index",
-    "pages/select-address/index",
-    "pages/address-add/index",
     "pages/order-list/index",
     "pages/order-details/index",
-    "pages/wuliu/index",
-    "pages/mycoupons/index",
-    "pages/my/index",
-    "pages/notice/show",
     "pages/turnover/index",
     "pages/new-order/index",
     "pages/today-order/index",
@@ -38,7 +28,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarTitleText": "点餐宝",
+    "navigationBarTitleText": "大鱼点单",
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#e32910"
   },
