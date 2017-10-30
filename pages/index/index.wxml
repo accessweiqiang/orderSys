@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="wrap">
+  <image src='/assets/images/d1.png' style='width: 100%;height: 100px;'></image>
+  <view class="header">
+    <view class="logo">
+      <image src="/assets/images/d4.png"></image>
+    </view>
+    <view class="shop">
+      <view class="shop-a">店名：{{shopInfo.name}}</view>
+      <view class="shop-b">简介：{{shopInfo.restaurantIntroduce}}</view>
+    </view>
+  </view>
+  <view class="banner"><image src='/assets/images/d2.png'></image></view>
+  <view class="content">
+    <view class="content-le">
+       <view>
+        <view wx:for="{{menu}}" wx:key="unique" class="prodtit" data-mid="{{item.id}}" bindtap="getProdList">{{item.name}}</view>
+       </view>
+      <view class='cart' wx:if="{{cartNum > 0}}">
+        <view class='cart-con'>
+          <image src='/assets/images/cart.png'></image>
+          <text>{{cartNum}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="content-ri">
+      <view wx:for="{{prodList}}"  wx:key="unique" class="con-list">
+        <view class="con-list-le">
+          <view class="con-list-le-img">
+            <image wx:if="{{item.goodsPictures}}" src="https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath={{item.goodsPictures}}&sessionId={{sessionId}}"></image>
+          </view>
+          <view class="con-list-le-text">
+            <view class="classname">{{item.goodsName}}</view>
+            <view class="price">￥{{item.price}}</view>
+          </view>
+        </view>
+        <view class="con-list-ri">
+         <image wx:if="{{item.num > 0}}" src="/assets/images/red.png" data-num="{{item.num}}" data-index="{{index}}" bindtap="redu"></image>
+          <text wx:if="{{item.num > 0}}">{{item.num}}</text>
+          <image src="/assets/images/add.png" data-num="{{item.num}}" data-price="{{item.price}}" data-pname="{{item.goodsName}}" data-pid="{{item.id}}" data-index="{{index}}" bindtap="add">
+          </image>
+        </view>
+        <view class="clear"></view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="tab1">
+      <view class="classname">
+        <image src="/assets/images/menu1.png"></image>
+      </view>
+      <view class="classname">
+      菜单
+      </view>
+    </view>
+    <view class="tab2">
+      <navigator url="/pages/subs/order">
+      <view class="classname">
+        <image src="/assets/images/order1.png"></image>
+      </view>
+      <view class="classname">我的订单</view>
+      </navigator>
+    </view>
+    <view class="tab3" bindtap="addOrder">
+    <!-- <navigator url="/pages/confirm/confirm"> -->
+     <text>￥{{totalPrice}}</text>
+     <text>结算</text>
+    <!-- </navigator> -->
+    </view>
+  </view>
+</view>

@@ -52,7 +52,8 @@ Page({
           storeInfo: data,
           photo
         });
-        app.globalData.storeInfo=data;
+        app.globalData.storeInfo = data;
+        app.globalData.storePhoto = photo;
         that.qrGenerate(data.no);        
       }
     })

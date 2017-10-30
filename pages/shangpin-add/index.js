@@ -175,7 +175,6 @@ Page({
     })
   },
   onLoad: function (option) {
-    console.log(option);
     if (option.id) {
       wx.setNavigationBarTitle({
         title: "编辑商品"

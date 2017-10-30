@@ -1,26 +1,26 @@
 <!--pages/caidan/index.wxml-->
 <view class='container'>
-  <view class='photo'></view>
-  <view wx:if="{{catagory.length>0}}">
+  <view class='store-photo' wx:if="{{storePhoto}}" style='background-image:url({{storePhoto}})'></view>
+  <view>
     <scroll-view class='left-block' scroll-y="true">
-      <view wx:for="{{catagory}}" wx:for-index="index" wx:for-item="item" wx:key="unique" data-index="{{index}}" class='item {{currentCatagory==index?"active":""}}' bindtap='selectCatagory'>
-        <text class=''>{{item.text}}</text>
+      <view wx:for="{{category}}" wx:for-index="index" class='item {{index==currentCategory?"active":""}}'  data-id="{{item.id}}" data-index="{{index}}" wx:key="unique" bindtap="categorySwitch">
+        <text class=''>{{item.name}}</text>
       </view>
     </scroll-view>
     <scroll-view class='right-block' scroll-y="true">
-      <view class="list" hidden="{{list ? false : true}}"> 
-        <navigator open-type='navigate' url='/pages/caidan-detail/index' class="item" wx:for="{{list}}" wx:key="unique">
-          <image class="photo" src="{{item.pic}}"></image>
+      <view class="list">
+        <view bindtap='toDetail'  class="item" wx:for="{{list}}" wx:key="unique" wx:key="{{unique}}" data-id='{{item.id}}' data-menubarId="{{item.menubarId}}" wx:if="{{currentCategory?item.menubarId==currentCategoryId:true}}"  data-index="{{index}}">
+          <image class="photo" wx:if="{{item.goodsPictures}}" src="https://www.wendin.cn/dcb/wxfile.do?showOrDownByurl&filePath={{item.goodsPictures}}&sessionId={{sessionId}}" ></image>
           <view>
-            <view class="name">{{item.name}}</view>
+            <view class="name">{{item.goodsName}}</view>
             <view class="red">
               <text class='yen'>¥</text>{{item.price}}</view>
           </view>
-        </navigator>
+        </view>
       </view>
     </scroll-view>
   </view>
-  <view class='no-data' wx:if="{{catagory.length==0}}">您还没有菜品，可以到商品管理添加
-    <navigator class='go-add' open-type='navigate' url="/pages/today-order/index" >去添加</navigator>
+  <view class='no-data' wx:if="{{list.length==0}}">您还没有菜品，可以到商品管理添加
+    <navigator class='go-add' open-type='navigate' url="/pages/shangpin/index">去添加</navigator>
   </view>
 </view>

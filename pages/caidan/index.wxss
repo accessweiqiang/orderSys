@@ -4,10 +4,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.photo{
+.store-photo{
   height: 160rpx;
   width: 100%;
-  background: url(https://www.wendin.cn/public/images/page/shangjia.png) no-repeat;
   background-size: cover;
 }
 .left-block{

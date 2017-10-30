@@ -1,83 +1,110 @@
-// pages/caidan/index.js
+// pages/shangpin/index.js
+var app = getApp();
+var util = require('../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    catagory:[
-      { text: "回锅肉" },
-      { text: "回锅肉" },
-      { text: "回锅肉" },
-      { text: "回锅肉" },
-      { text: "回锅肉回锅肉回锅肉回锅肉回锅肉回锅肉" },
-      { text: "回锅肉" },
-      { text: "回锅肉" },
-      {text:"小吃"}
-    ],
-    currentCatagory:0,
-    list: [{ pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" },{ pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }, { pic: "https://www.wendin.cn/public/images/page/shangjia.png", name: "回锅肉", price: "6" }]
+    currentCategory: 0,
+    currentCategoryId: "",
+    sessionId: ""
   },
-  selectCatagory:function(e){
-    console.log(e)
+  categorySwitch: function (e) {
     var index = e.currentTarget.dataset.index;
+    var id = e.currentTarget.dataset.id;
+    console.log(index)
     this.setData({
-      currentCatagory:index
+      currentCategory: index,
+      currentCategoryId: id
+    })
+
+  },
+  getCategory: function () {
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: 'https://www.wendin.cn/dcb/wxmenubar.do?findByPro&sessionId=' + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      complete: function () {
+        wx.hideLoading()
+      },
+      success: function (res) {
+        var data = res.data
+        if (data.success) {
+          var menus = data.attributes.menus;
+          menus.unshift({ name: "全部" });
+          that.setData({
+            category: menus
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel: false,
+
+          })
+        }
+      }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  getList: function () {
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      url: 'https://www.wendin.cn/dcb/wxgoods.do?findByPro&sessionId=' + app.globalData.sessionId,
+      method: 'POST',
+      header: {
+        'content-type': "application/x-www-form-urlencoded"
+      },
+      complete: function () {
+        wx.hideLoading()
+      },
+      success: function (res) {
+        var data = res.data
+        if (data.success) {
+          that.setData({
+            list: data.attributes.goodss
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: data.msg,
+            showCancel: false,
+          })
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  toDetail: function (e) {
+    var index = e.currentTarget.dataset.index;
+    var item = this.data.list[index];
+    var query = util.obj2query(item);
+    wx.navigateTo({
+      url: '/pages/caidan-detail/index?' + query,
+    })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getList();
+    this.getCategory();
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  onLoad: function () {
+    this.setData({
+      sessionId: app.globalData.sessionId,
+      storePhoto: app.globalData.storePhoto
+    });
   }
+
 })

@@ -39,7 +39,7 @@
 }
 .nav-btn{
    color: #5bb7f5;
-  font-size: 24rpx;
+  font-size: 26rpx;
 }
 .children  .photo{
   height: 50rpx;

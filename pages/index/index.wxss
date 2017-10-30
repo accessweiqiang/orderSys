@@ -1,0 +1,36 @@
+/**index.wxss**/
+.clear{clear: both;}
+.wrap{width: 100%;height: 100%;box-sizing: border-box;position: relative}
+.header{width: 100%;height: 110px;display: flex;position: absolute;top: 0px;}
+.header .logo{width: 72px;height: 72px;margin-top: 20px;margin-left: 24px;}
+.header .logo image{width: 100%;height: 100%;}
+.header .shop{margin-left: 18px;padding-top: 28px;color: #fff;}
+.header .shop .shop-a{font-size: 16px;font-weight: bold;}
+.header .shop .shop-b{font-size: 14px;margin-top: 19px;}
+.banner{width: 100%;height: 114px;}
+.banner image{width: 100%;height: 114px;margin-top: -5px;}
+.content{width: 100%;display: flex;background: #fff;margin-bottom: 50px;position: relative;}
+.content-le{padding-top: 25px;width: 28%;padding-left: 4%;}
+.cart{position: fixed;bottom: 60px;}
+.cart image{width: 70px;height: 70px;}
+.cart-con{position: relative;}
+.cart text{position:absolute;top: -1px;right:9%;color: #fff;}
+.content-ri{width: 100%;}
+.content-le .prodtit{text-align: center;width: 100%;height: 50px;font-size: 14px;}
+.content-le .cho{color: #ff0000;}
+.content-ri image{height: 103px;}
+.con-list{padding-top: 20px;padding-bottom: 20px;margin-bottom: 20px;border-bottom: 1px solid #ddd;padding-left: 10px;}
+.con-list-le{float: left;display: flex}
+.con-list-le-img image{width: 100px;}
+.con-list-le-text{margin-left: 10px;padding-top: 15px;}
+.price{color: #ff0000;}
+.con-list-ri{float: right;margin-right: 4%;padding-top: 20px;}
+.con-list-ri image{width: 25px;height: 25px;vertical-align: middle}
+.con-list-ri text{margin: 0 10px;}
+.footer{width: 100%;height: 60px;background: #eee;position: fixed;bottom: 0px;display: flex;}
+.tab1{width: 30%;height: 100%;text-align: center;font-size: 14px;padding-top: 10px;}
+.tab1 image{width: 25px;height: 25px;}
+.tab2{width: 30%;height: 100%;text-align: center;font-size: 14px;padding-top: 10px;}
+.tab2 image{width: 25px;height: 25px;}
+.tab3{width: 40%;height: 100%;background: #ff0000;line-height: 60px;color: #fff;text-align: center;}
+.tab3 text:nth-child(1){margin-right: 10px;}

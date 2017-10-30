@@ -11,6 +11,28 @@ App({
   },
   onLaunch: function () {
     console.log("launch");
+    //调用API从本地缓存中获取数据
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            wx.request({
+              url: "https://www.wendin.cn/dcb/wxauthenticate.do?onLogin&code=" + res.code,
+              success: function (resp) {   
+                wx.setStorageSync('code', resp.data.attributes.sessionId);          
+                // wx.setStorage({
+                //   key: "code",
+                //   data:resp.data.attributes.sessionId
+                // })
+              },
+              fail: function () {
+                console.log("fail")
+              },
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+          }
+        }
+      });
   },
   login: function () {
     wx.showLoading({

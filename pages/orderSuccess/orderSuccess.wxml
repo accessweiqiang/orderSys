@@ -1,0 +1,8 @@
+
+<view class="succ-wrap">
+ <view class="succ-image">
+  <view class="classname"><image src="/assets/images/confir.png"></image></view>
+   <view class="classname"><text>下单成功等待商家确认中</text></view>
+ </view>
+ <view class="succ-foot"><navigator url="/pages/index/index">确定</navigator></view>
+</view>

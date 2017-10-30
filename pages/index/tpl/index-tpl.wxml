@@ -1,0 +1,65 @@
+
+<!--index_index_scroll-->
+<template name="index_banner_tmpl">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+    <block wx:for="{{images}}" wx:key="index">
+      <swiper-item>
+        <image src="{{pictureDomain}}{{item.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+
+<!--index_index_notes-->
+<template name="index_notes_tmpl">
+  <block wx:for="{{notes}}" wx:key="index">
+    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+      <image src="{{pictureDomain}}{{item.pic}}" class="slide-image" />
+      <text>{{item.text}}</text>
+    </view>
+  </block>
+</template>
+
+<!--index_index_group-->
+<template name="index_groups_tmpl">
+  <block wx:for="{{groups}}" wx:for-item="group" wx:key="{{group.groupId}}">
+    <view class="prod-tit clearfix">
+      <text class="group-name">{{group.groupName}}</text>
+    </view>
+
+    <!--group prods-->
+    <view class="prod-item clearfix">
+      <view class="item"  wx:for="{{group.prodList}}" wx:for-item="prod"  wx:key="{{prod.prodId}}">
+       <view wx:if="{{prod.prodId}}" bindtap="toProdInfo" data-prodId="{{prod.prodId}}">
+          <text class="prod-new" wx:if="{{prod.mpromTag==1}}">新品</text>
+          <text class="prod-hot" wx:if="{{prod.mpromTag==2}}">热门</text>
+          <image class="img" src="{{pictureDomain}}{{prod.album}}{{postPicture}}" />
+          <text class="prod-name">{{prod.prodName}}</text>
+          <text class="prod-price">￥{{prod.maxPrice}}</text>
+       </view>
+        <view wx:if="{{!prod.prodId}}">
+            <view  wx:if="{{prod=='nomore'}}">
+               <view class="commore clearfix">
+                  <text class="commoreLe"></text>
+                  <text class="comname">暂无更多</text>
+                  <text class="commoreLe"></text>
+               </view>
+               <view class="imgmore">
+                   <image src="../../../assets/images/comm/icon_nomore.png"></image>               
+               </view>              
+            </view>
+            <view wx:elif="{{prod=='more'}}">
+                <view class="commore clearfix">
+                   <text class="commoreLe"></text>
+                   <text class="comname">更多好货</text>
+                   <text class="commoreLe"></text> 
+                </view>
+                <view class="clickmore">
+                     <text>></text>
+                </view>                    
+            </view>            
+        </view>            
+      </view>     
+    </view>
+  </block>
+</template>

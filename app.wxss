@@ -3,7 +3,8 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  font-size: 28rpx;
+  font-size: 30rpx;
+  color: #333;
 } 
 .left{
   float: left;
@@ -93,7 +94,7 @@ height: 10rpx;
   line-height: 80rpx;
   color:#fff;
   text-align: center;
-  font-size: 28rpx;
+  font-size: 36rpx;
 }
 .modal  .bottom-btn .ok{
   background:#e32910; 
@@ -102,5 +103,5 @@ height: 10rpx;
   width: 100%;
   text-align: center;
   margin-top: 50rpx;
-  color: #999;
+  color: #666;
 }

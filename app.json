@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/setupApp/index",
+    "pages/index/index",
     "pages/home/home",
     "pages/order-list/index",
     "pages/order-details/index",
@@ -24,7 +25,10 @@
     "pages/printer-add/index",
     "pages/bankcard/index",
     "pages/bankcard-add/index",
-    "pages/caiwu-tixian-jilu/index"
+    "pages/caiwu-tixian-jilu/index",
+    "pages/subs/order",
+    "pages/confirm/confirm",
+    "pages/orderSuccess/orderSuccess"
   ],
   "window": {
     "backgroundTextStyle": "light",

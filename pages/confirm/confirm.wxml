@@ -1,0 +1,39 @@
+<view class="wrap">
+  <view class="order-b">
+    <view class="order-b-1 clearfix">
+      <view class="order-b-le">
+        <image src="/assets/images/opers.png"></image>
+        <text>欢乐的猫</text>
+      </view>
+    </view>
+    <view class="order-b-2">
+      <view class="order-b-2-con" wx:for="{{prodList}}">
+        <text>{{item.goodsName}}</text>
+        <text>￥{{item.price}}</text>
+        <text>x{{item.goodsNum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="conftot">合计： <text class="contftot">￥{{totalPrice}}</text></view>
+  <view class="confnum">
+    <view class="confnum-con clearfix">
+      <view class="confnum-b">
+        <!-- 就餐人数 <text>10</text> -->
+      </view>
+    </view>
+  </view>
+  <view class="confooter">
+    <!-- <navigator url="/pages/orderSuccess/orderSuccess" style=""></navigator> -->
+    <text bindtap="wxPay">微信支付</text>
+    <text bindtap="popPay">现金支付</text>
+  </view>
+</view>
+<view wx:if="{{isPop}}" class="masks">
+  <view class="popCon">
+    <view class="pop1">现金支付请与商家确认</view>
+    <view class="pop2">
+      <view class="pop2-a" bindtap="closePop">好的</view>
+      <view class="pop2-b">用微信支付</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="wrap">
+  <view class="order-a">
+    <view class="order-a-1">订单列表</view>
+  </view>
+  <view class="borline"></view>
+  <view class="order-b" wx:for="{{orderList}}">
+    <view class="order-b-1 clearfix">
+      <view class="order-b-le">
+        <image src="/assets/images/opers.png"></image>
+        <text>欢乐的猫</text>
+      </view>
+      <view class="order-b-ri">商家确认中4分12秒</view>
+    </view>
+    <view class="order-b-2">
+      <view class="order-b-2-con" wx:for="{{item.orderDetailEntitys}}">
+       <text>{{item.goodsName}}</text>
+       <text>￥{{item.factPrice}}</text>
+       <text>x{{item.goodsNum}}</text>
+      </view>
+    </view>
+    <view class="order-b-3 clearfix">
+     <view class="order-b-3-c">{{item.createTime}}</view>
+     <view class="order-b-3-d">共计：￥{{item.factPrice}} 已支付</view>
+    </view>
+    <view class="order-b-3 clearfix">
+     <view class="order-b-3-c">订单号:{{item.id}}</view>
+     <view class="order-b-3-e" data-orderid="{{item.id}}" bindtap="deleteOrder">删除</view>
+    </view>
+  </view>
+</view>
